@@ -1,4 +1,8 @@
 const factorial = (number) => {
+  if (number === 0 ){
+    return 0;
+  }
+
   let fact = 1;
   while (number !== 0) {
     fact *= number;
@@ -18,7 +22,9 @@ describe('factorial test', () => {
   });
 
   test('should find factorial of 0', () => {
-    // delete next line and replace it with proper test
-    expect(true).toEqual(false);
+    const actual = factorial(0);
+    const expected = 0;
+
+    expect(actual).toEqual(expected);
   });
 });
