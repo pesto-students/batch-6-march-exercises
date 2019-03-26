@@ -42,8 +42,29 @@ describe('stack test', () => {
 
   test('should push elements to stack in order', () => {
     const actual = myStack.items;
-    const expected = [3, 2, 1];
+    const expected = [1, 2, 3];
 
     expect(actual).toEqual(expected);
+  });
+
+  test('Check that stack length is 3', () => {
+    const actual = myStack.getLength();
+    const expected = 3;
+
+    expect(actual).toBe(expected);
+  });
+
+  test('Should remove an item from stack', () => {
+    myStack.pop();
+    const stackLength = myStack.getLength();
+    const expectedStackLength = 2;
+
+    expect(stackLength).toBe(expectedStackLength);
+  });
+
+  test('Should return first element from the array', () => {
+    const actual = myStack.peek();
+    const expected = 3;
+    expect(actual).toBe(expected);
   });
 });
