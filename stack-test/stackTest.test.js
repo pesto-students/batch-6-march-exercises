@@ -31,16 +31,16 @@ class Stack {
   }
 }
 
-describe('stack test', () => {
+describe("stack test", () => {
   let myStack;
   beforeEach(() => {
     myStack = new Stack();
-    myStack.push(1);
-    myStack.push(2);
     myStack.push(3);
+    myStack.push(2);
+    myStack.push(1);
   });
 
-  test('should push elements to stack in order', () => {
+  test("should push elements to stack in order", () => {
     const actual = myStack.items;
     const expected = [3, 2, 1];
 
