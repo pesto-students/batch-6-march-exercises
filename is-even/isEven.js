@@ -1,6 +1,6 @@
 
-function isEven(...args) {
-  return args;
+function isEven(numToCheck) {
+  return Number.isInteger(numToCheck / 2);
 }
 
 export {
