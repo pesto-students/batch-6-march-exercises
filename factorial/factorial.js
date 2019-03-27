@@ -1,8 +1,14 @@
-
-function factorial(...args) {
-  return args;
+function factorial(n) {
+  if (n === 0 || n === 1) {
+    return 1;
+  }
+  let result = 1;
+  let i = 1;
+  while (i <= n) {
+    result *= i;
+    i += 1;
+  }
+  return result;
 }
 
-export {
-  factorial,
-};
+export { factorial };
