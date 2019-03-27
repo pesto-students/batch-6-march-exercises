@@ -1,6 +1,7 @@
 
-function largeOfFour(...args) {
-  return args;
+function largeOfFour(arr) {
+  arr.split(" ")
+  sum = 0;
 }
 
 export {
