@@ -3,28 +3,28 @@
     "segmentName": "segment-2",
     "exercises": {
         "array-sum-test": {
-            "completed": false
+            "completed": true
         },
         "create-object-test": {
-            "completed": false
+            "completed": true
         },
         "every-nth-test": {
-            "completed": false
+            "completed": true
         },
         "factorial-test": {
-            "completed": false
+            "completed": true
         },
         "get-name-test": {
-            "completed": false
+            "completed": true
         },
         "logical-operators": {
-            "completed": false
+            "completed": true
         },
         "number-sum-test": {
-            "completed": false
+            "completed": true
         },
         "return-a-function-test": {
-            "completed": false
+            "completed": true
         },
         "return-a-string-test": {
             "completed": true
@@ -33,10 +33,10 @@
             "completed": true
         },
         "stack-test": {
-            "completed": false
+            "completed": true
         },
         "sum-test": {
-            "completed": false
+            "completed": true
         }
     }
 }
