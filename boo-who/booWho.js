@@ -1,9 +1,7 @@
 
 function booWho(...args) {
-  if(typeof args[0] === 'boolean'){
-    return true
-  }
-  return false
+  return typeof args[0] === 'boolean'
+    
 }
 
 export {
