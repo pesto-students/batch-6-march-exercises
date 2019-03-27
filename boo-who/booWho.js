@@ -1,9 +1,11 @@
 
-function booWho(...args) {
-  if(args[0]===true||args[0]===false)
+function booWho(input) {
+  if(input === true || input === false) {
   return true;
-  else 
+  }
+  else {
   return false;
+  }
 }
 
 export {
