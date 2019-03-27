@@ -1,28 +1,48 @@
 
 function applyOperator(...args) {
-  if(args[0] === undefined){
+  if(typeof args[0] === 'undefined'){
     throw new Error('operator is not defined');
   }
   var operator = args[0];
-  var result = args[1] !== undefined ? args[1] : 0;
-  for (var i = 2; i < args.length; i++){
+  var result;
+  for (var i = 1; i < args.length; i++){
     switch (operator){
       case '+':
-        result = result + args[1];
+        if(typeof result === 'undefined'){
+          result = 0;
+        }
+        result = result + args[i];
         break;
       case '-':
-        result = result - args[1];
+        if(typeof result === 'undefined'){
+          result = 0;
+        }
+        result = result - args[i];
         break;
       case '*':
-        result = result * args[1];
+        if(typeof result === 'undefined'){
+          result = 1;
+        }
+        result = result * args[i];
         break;
       case '/':
-        result = result / args[1];
+        if(typeof result === 'undefined'){
+          result = 1;
+        }
+        result = result / args[i];
         break;
       case '%':
-        result = result % args[1];
+        if(typeof result === 'undefined'){
+          result = args[i];
+        }
+        else{
+          result = result % args[i];  
+        }
         break;      
     }
+  }
+  if(typeof result === 'undefined'){
+    return 0;
   }
   return result;
 }
