@@ -30,13 +30,13 @@
             "completed": true
         },
         "return-true-test": {
-            "completed": false
+            "completed": true
         },
         "stack-test": {
-            "completed": false
+            "completed": true
         },
         "sum-test": {
-            "completed": false
+            "completed": true
         }
     }
 }
