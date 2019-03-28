@@ -1,11 +1,11 @@
 
-function chunkArrayInGroups(arr, chunkArraySize){
-  if(arr.length < chunkArraySize){
-    return arr;
-  } 
-  const firstChunk = arr.slice(0, chunkArraySize);
-  return [firstChunk].concat(chunk(arr.slice(chunkArraySize, arr.length), chunkArraySize));
+function chunkArrayInGroups(arr, chunkArraySize){  
+  var results = [];
+  while (arr.length) {
+    results.push(arr.splice(0, chunkArraySize))
+  }
 
+return results;
 }
 
 export {
