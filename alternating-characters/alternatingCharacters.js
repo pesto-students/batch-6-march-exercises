@@ -1,6 +1,9 @@
 function minToCharsToDelForAlternateStr(string) {
   const tempArray = [];
-  const 
+  const stringChars = string.split('');
+  return stringChars.reduce(function (minCharsToDel, currentValue) {
+      
+  }, 0);
 }
 
 function alternatingCharacters(strings) {
