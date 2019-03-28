@@ -1,9 +1,12 @@
 
 function bouncer(givenArray) {
-  givenArray = givenArray.filter(function(value){
-      return value;
+   return givenArray.filter(function(value){
+     if(value){
+       return true;
+     }else{
+       return false;
+     }
   });
-  return givenArray;
 }
 
 export {
