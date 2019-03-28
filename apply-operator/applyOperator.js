@@ -12,9 +12,7 @@ function applyOperator(...args) {
       return operator[args[0]](total, currentValue);
     }, 0);
   };
-  throw new Error('Please provide correct operator +, -, %, /');
+  throw new Error('Please provide correct operator +, -, %, *, /');
 }
 
-export {
-  applyOperator,
-};
+export default applyOperator;
