@@ -1,15 +1,5 @@
-function isEven(arg) {
-  let number = arg;
-  if (number === 1) {
-    return false;
-  }
-  while (number !== 1) {
-    if (number === 0) {
-      return false;
-    }
-    number /= 2;
-  }
-  return true;
+function isEven(number) {
+  return Math.floor(number / 2) * 2 === number;
 }
 
 export { isEven };
