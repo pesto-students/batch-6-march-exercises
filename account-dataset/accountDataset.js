@@ -1,7 +1,7 @@
 const dataset = require('./dataset.json');
-console.log(dataset);
-function accountDataset(...args) {
-  
+
+function accountDataset(bankBalances) {
+  return bankBalances.filter((acc) => acc.amount > )
 }
 
 function hundredThousandairs(){
