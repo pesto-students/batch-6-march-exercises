@@ -1,6 +1,7 @@
-
-function curry(...args) {
-  return args;
+function curry(){
+  function add(a, b) {
+      return a + b;
+  }
 }
 
 export {

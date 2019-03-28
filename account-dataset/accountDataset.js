@@ -1,8 +1,12 @@
-
+const dataset = require('./dataset.json');
+console.log(dataset);
 function accountDataset(...args) {
-  return args;
+  
 }
 
+function hundredThousandairs(){
+
+}
 export {
   accountDataset,
 };
