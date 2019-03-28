@@ -17,13 +17,7 @@ function SavingsAccount(...args) {
   if( !lastNamePattern.test( this._lastName ) )
   throw ('Last name must contain english alphabets only');
   
-  // return {
-  //   _accountNumber: accountNumber,
-  //     _email: email,
-  //     _firstName: firstName,
-  //     _lastName: lastName,
-  //     products: [],
-  // };
+ 
 }
 
 export {
