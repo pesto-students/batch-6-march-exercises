@@ -1,5 +1,5 @@
 function findElement(array, predicate) {
-  return array.find(element => predicate(element));
+  return array.find(predicate);
 }
 
 export { findElement };

@@ -1,5 +1,5 @@
 function dropElements(array, predicate) {
-  return array.filter(element => predicate(element));
+  return array.filter(predicate);
 }
 
 export { dropElements };
