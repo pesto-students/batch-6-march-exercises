@@ -1,6 +1,9 @@
+function minimumNumbersToBeDeleted(string) {
 
-function alternatingCharacters(...args) {
-  return args;
+}
+
+function alternatingCharacters(strings) {
+  
 }
 
 export {
