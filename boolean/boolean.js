@@ -1,6 +1,6 @@
 
 function boolean(args) {
-  if(typeof arg === 'boolean'){
+  if(typeof args == Boolean){
     return true;
   } else {
     return false;
