@@ -6,7 +6,7 @@ function squareNumbersArray(...args) {
     if (!isNumber(number))
       throw('My custom error');
     else
-      return number;
+      return number * number;
   })
   return numbers;
 }
