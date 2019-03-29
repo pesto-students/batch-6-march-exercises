@@ -1,6 +1,10 @@
 
-function boolean(...args) {
-  return args;
+function boolean(args) {
+  if(typeof arg === 'boolean'){
+    return true;
+  } else {
+    return false;
+  }
 }
 
 export {
