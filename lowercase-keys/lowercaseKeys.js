@@ -1,6 +1,6 @@
 
-function lowercaseKeys(...args) {
-  return args;
+function lowercaseKeys(obj) {
+  return Object.keys(obj).toLoweCase();
 }
 
 export {
