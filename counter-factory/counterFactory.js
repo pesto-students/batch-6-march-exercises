@@ -11,7 +11,6 @@ function counterFactory(...args) {
       return counter;
     }
   }
-  return args;
 }
 
 export {

@@ -4,16 +4,19 @@ function applyOperator(...args) {
   if(operator === undefined){
     throw new Error('operator is not defined');
   }
-  // args.shift();
-  // var operands = args;
+  
+  var operands = args.slice(1);
+  var operatorSet = {
+    '+' : [(result, currentValue) => result + currentValue, 0],
+    '-' : [(result, currentValue) => result - currentValue, 0],
+    '*' : [(result, currentValue) => result * currentValue, 1],
+    '/' : [(result, currentValue) => parseFloat((result / currentValue).toFixed(4)), 1],
+    '%' : [(result, currentValue) => result % currentValue ]
+  };
 
-  // if(operands.length === 0) {
-  //   return 0;
-  // }
-    
-  return 0;
+  var evaluatedValue = operands.reduce(...operatorSet[operator]);
+
+  return evaluatedValue;
 }
 
-export {
-  applyOperator,
-};
+export default applyOperator;

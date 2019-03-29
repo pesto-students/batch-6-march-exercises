@@ -6,7 +6,6 @@ function counter(...args) {
     counter++;
     return counter;
   }
-  return args;
 }
 
 export {
