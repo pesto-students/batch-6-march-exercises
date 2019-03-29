@@ -1,8 +1,5 @@
-
-function boolean(...args) {
-  return args;
+function boolean(arg) {
+  return !!arg;
 }
 
-export {
-  boolean,
-};
+export { boolean };
