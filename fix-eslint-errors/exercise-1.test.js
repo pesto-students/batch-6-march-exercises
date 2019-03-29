@@ -8,6 +8,7 @@ function promised(val) {
     });
 }
 
+
 function thenabled(val, arr) {
     return {
         then: function(f){
