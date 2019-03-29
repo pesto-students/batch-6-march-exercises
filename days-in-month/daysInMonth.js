@@ -7,12 +7,7 @@ function daysInMonth(year, month) {
     return 29;
   }else{
     return monthDays[month-1];
-  }
-
-
-
-
-  
+  }  
 }
 
 export {
