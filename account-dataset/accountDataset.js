@@ -28,18 +28,14 @@ function sumOfBankBalances() {
 
 function sumOfInterests() {
   const states = ['WI', 'IL', 'WY', 'OH', 'GA', 'DE'];
-  const requiredAccounts = parseFloat(
-    dataset.bankBalances
-      .reduce((total, currentAccount) => {
-        if (states.includes(currentAccount.state)) {
-          total += (parseFloat(currentAccount.amount) * 18.9) / 100;
-          return total;
-        }
-        return total;
-      }, 0)
-      .toFixed(2),
-  );
-  return requiredAccounts;
+  const requiredAccountsSum = dataset.bankBalances.reduce((total, currentAccount) => {
+    if (states.includes(currentAccount.state)) {
+      total += parseFloat(currentAccount.amount);
+      return total;
+    }
+    return total;
+  }, 0);
+  return (requiredAccountsSum * 18.9) / 100;
 }
 
 function higherStateSums() {
