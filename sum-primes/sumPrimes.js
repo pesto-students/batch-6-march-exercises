@@ -1,23 +1,23 @@
-function isPrime(number){
-  var isPrime = true;
-  for(var i = 2; i <= number/2; i++){
-    if(number % i === 0){
-      isPrime = false;
+function isPrime(number) {
+  let isNumberPrime = true;
+  for (let i = 2; i <= number / 2; i += 1) {
+    if (number % i === 0) {
+      isNumberPrime = false;
       break;
     }
   }
-  return isPrime;
+  return isNumberPrime;
 }
 
 function sumPrimes(number) {
-  if (number < 2){
+  if (number < 2) {
     return number;
   }
-  var sum = 0;
-  for(var pointer = 2; pointer <= number; pointer++){
-      if(isPrime(pointer)){
-        sum = sum + pointer;
-      }
+  let sum = 0;
+  for (let pointer = 2; pointer <= number; pointer += 1) {
+    if (isPrime(pointer)) {
+      sum += pointer;
+    }
   }
   return sum;
 }
