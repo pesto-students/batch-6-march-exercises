@@ -6,13 +6,13 @@
             "completed": false
         },
         "block-scoping": {
-            "completed": false
+            "completed": true
         },
         "const-immutable": {
             "completed": true
         },
         "create-student": {
-            "completed": false
+            "completed": true
         },
         "double-odd-numbers": {
             "completed": false
