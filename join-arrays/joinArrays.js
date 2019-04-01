@@ -1,6 +1,6 @@
 
-function joinArrays(...args) {
-  return args;
+function joinArrays(...arrays) {
+  return arrays.reduce((concatinatedArray, array) => concatinatedArray.concat(array));
 }
 
 export {
