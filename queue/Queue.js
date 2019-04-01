@@ -17,7 +17,7 @@ class Queue {
   }
 
   toString(stringifier) {
-    if (this.linkedList[0] instanceof Object) {
+    if (typeof this.linkedList[0] === 'object') {
       return this.linkedList.map(stringifier).join(',');
     }
     return this.linkedList.join(',');
