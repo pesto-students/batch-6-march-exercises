@@ -1,7 +1,7 @@
 
 function bouncer(array) {
-  return array.filter(function(value) {
-    return value;
+  return array.filter((value) => {
+    return Boolean(value);
   });
 }
 
