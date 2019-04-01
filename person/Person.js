@@ -1,8 +1,17 @@
+class Person {
+  constructor(firstName, lastName, dateOfBirth) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.dateOfBirth = dateOfBirth;
+  }
 
-function person(...args) {
-  return args;
+  addDobDigits() {
+    const dateOfBirthDigits = this.dateOfBirth.replace(/\//g, '').split('');
+
+    return dateOfBirthDigits
+      .reduce((total, currentNumber) => total + parseInt(currentNumber, 10), 0);
+  }
 }
-
 export {
-  person,
+  Person,
 };
