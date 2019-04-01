@@ -1,5 +1,5 @@
 
-function blockScoping(...args) {
+function blockScoping(args) {
   return args;
 }
 
