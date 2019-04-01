@@ -8,7 +8,7 @@ class Person {
 
   addDobDigits() {
     const dobChars = this.dateOfBirth.split('');
-    const isNumber = el => (Number.isInteger(parseInt(el, 10)));
+    const isNumber = el => Number.isInteger(parseInt(el, 10));
     const dobDigits = dobChars.filter(isNumber);
     return dobDigits.reduce((sum, el) => sum + parseInt(el, 10), 0);
   }
