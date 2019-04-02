@@ -1,13 +1,7 @@
 import { fibonacciIter } from './fibonacciIter';
 
 describe('fibonacciIter', () => {
-  test('should be an iterable', () => {
-    const iterator = fibonacciIter[Symbol.iterator]();
-    expect(typeof fibonacciIter[Symbol.iterator]).toBe('function');
-    expect(typeof iterator.next).toBe('function');
-    expect(iterator.next()).toHaveProperty('value');
-    expect(iterator.next()).toHaveProperty('done');
-  });
+
 
   test('should return fibonacciIter series', () => {
     const iterator = fibonacciIter[Symbol.iterator]();
@@ -22,5 +16,12 @@ describe('fibonacciIter', () => {
     expect(iterator.next().value).toBe(55);
     expect(iterator.next().value).toBe(89);
     expect(iterator.next().value).toBe(144);
+  });
+  test('should be an iterable', () => {
+    const iterator = fibonacciIter[Symbol.iterator]();
+    expect(typeof fibonacciIter[Symbol.iterator]).toBe('function');
+    expect(typeof iterator.next).toBe('function');
+    expect(iterator.next()).toHaveProperty('value');
+    expect(iterator.next()).toHaveProperty('done');
   });
 });
