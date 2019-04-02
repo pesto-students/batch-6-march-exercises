@@ -13,7 +13,7 @@ describe('isIterableEmpty', () => {
 
     const emptyIterable = {};
     // eslint-disable-next-line no-empty-function
-    emptyIterable[Symbol.iterator] = function* iterator() {};
+    emptyIterable[Symbol.iterator] = function* iterator() { };
 
     expect(isIterableEmpty(emptyIterable)).toBe(true);
     expect(isIterableEmpty([])).toBe(true);
