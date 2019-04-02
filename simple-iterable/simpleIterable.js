@@ -1,18 +1,19 @@
 function simpleIterable() {
   return {
     [Symbol.iterator]() {
-      const value = 0;
+      let counter = 0;
       return {
         next() {
-          if (value > 5) {
+          if (counter < 5) {
+            counter += 1;
             return {
-              value: undefined,
+              value: counter,
               done: false,
             };
           }
           return {
-            value: value + 1,
-            done: false,
+            value: undefined,
+            done: true,
           };
         },
       };
