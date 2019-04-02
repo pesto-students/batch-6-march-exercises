@@ -9,7 +9,7 @@ function ConsumableUsers() {
     next() {
       const val = this.users.get(this.index);
       this.index += 1;
-      const isDone = !this.users.has(this.index);
+      const isDone = val === undefined;
       return {
         value: `user: ${val}`,
         done: isDone,

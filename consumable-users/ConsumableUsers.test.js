@@ -64,6 +64,9 @@ describe('Iterator usages', () => {
 
       it('use for-of to loop over an iterable', () => {
         const users = [];
+        for (const val of usersIterable) {
+          users.push(val);
+        }
         expect(users).toEqual(['user: Alice', 'user: Bob']);
       });
 
