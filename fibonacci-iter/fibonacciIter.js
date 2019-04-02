@@ -1,17 +1,14 @@
 
 const fibonacciIter = {
-  previousN: 1,
-  currentN: 1,
   [Symbol.iterator]() {
-    return this;
-  },
-  next() {
-    const newNumber = this.previousN + this.currentN;
-    this.previousN = this.currentN;
-    this.currentN = newNumber;
+    const currentValue = 1;
     return {
-      value: newNumber,
-      done: false,
+      next() {
+        return {
+          value: currentValue + 1,
+          done: false,
+        };
+      },
     };
   },
 };
