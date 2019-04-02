@@ -3,18 +3,7 @@ import { ConsumableUsers } from './ConsumableUsers';
 describe('Iterator usages', () => {
   let usersIterable;
   beforeEach(() => {
-    const consumableUsers = new ConsumableUsers();
-
-    function iteratorFunction() {
-      return {
-        next: () => ({
-          value: consumableUsers.nextUser,
-          done: consumableUsers.done,
-        }),
-      };
-    }
-
-    usersIterable = {};
+    usersIterable = new ConsumableUsers();
   });
 
   describe('create an iterator/iterable', () => {
@@ -36,10 +25,10 @@ describe('Iterator usages', () => {
 
   describe('fill the iterable with content using `ConsumableUsers`', () => {
     describe('using the iterator', () => {
-      let iterator;
-      beforeEach(() => {
-        iterator = usersIterable[Symbol.iterator];
-      });
+      const iterator = usersIterable[Symbol.iterator]();
+      // beforeEach(() => {
+      //   iterator = usersIterable[Symbol.iterator]();
+      // });
 
       it('should return `Alice` as first user', () => {
         const firstItem = iterator.next();
@@ -59,7 +48,6 @@ describe('Iterator usages', () => {
 
       it('should return `done:true`, which means there are no more items', () => {
         iterator.next();
-        iterator.xyz();
         const beyondLast = iterator.next();
         expect(beyondLast).toEqual({
           value: undefined,
@@ -70,7 +58,7 @@ describe('Iterator usages', () => {
 
     describe('using built-in constructs', () => {
       it('use `Array.from()` to convert the iterable to an array (which is also iterable)', () => {
-        const users = usersIterable;
+        const users = Array.from(usersIterable, x => x);
         expect(users).toEqual(['user: Alice', 'user: Bob']);
       });
 
