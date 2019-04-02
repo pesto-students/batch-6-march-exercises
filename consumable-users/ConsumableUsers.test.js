@@ -14,11 +14,12 @@ describe('Iterator usages', () => {
       };
     }
 
-    usersIterable = {};
+    usersIterable = consumableUsers;
   });
 
   describe('create an iterator/iterable', () => {
     it('the `usersIterable` should be iterable', () => {
+      console.dir(usersIterable);
       const iterable = Symbol.iterator in usersIterable;
       expect(iterable).toBe(true); // do not change this line!
     });
