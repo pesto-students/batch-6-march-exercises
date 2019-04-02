@@ -1,6 +1,7 @@
 
-function isIterable(...args) {
-  return args;
+function isIterable(obj) {
+  const isObjIterable = typeof obj[Symbol.iterator] === 'function';
+  return isObjIterable;
 }
 
 export {
