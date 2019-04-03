@@ -1,5 +1,5 @@
 
-function objectAssign(...args) {
+function objectAssign({ ...args }) {
   return args;
 }
 
