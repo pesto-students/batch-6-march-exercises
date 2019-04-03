@@ -17,10 +17,7 @@ function privateProps(obj, privacyFilter) {
       }
     },
     has(target, prop) {
-      if (isPrivateProp(prop)) {
-        return false;
-      }
-      return true;
+      return !isPrivateProp(prop);
     },
     ownKeys(target) {
       const keys = Reflect.ownKeys(target);
