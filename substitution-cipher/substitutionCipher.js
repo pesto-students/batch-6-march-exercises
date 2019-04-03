@@ -8,11 +8,13 @@ function substitutionCipher(text) {
     let el = currentEl.charCodeAt(0);
     if (isUpper(currentEl)) {
       el = el % 2 === 0 ? (el + 6) % 90 : (el + 4) % 90;
+      return acc + String.fromCharCode(el);
     }
     if (isLower(currentEl)) {
       el = el % 2 === 0 ? (el + 6) % 122 : (el + 4) % 122;
+      return acc + String.fromCharCode(el);
     }
-    return acc + String.fromCharCode(el);
+    return acc + currentEl;
   }, '');
 }
 
