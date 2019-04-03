@@ -1,8 +1,15 @@
+function knownProp(obj) {
+  const handler = {
+    get(target, name) {
+      if (name in target) {
+        return target[name];
+      }
+      throw new TypeError('Unknown property');
+    },
+  };
 
-function knownProp(...args) {
-  return args;
+  const p = new Proxy(obj, handler);
+  return p;
 }
-
-export {
-  knownProp,
-};
+// console.log(knownProp({ foo: true }));
+export { knownProp };
