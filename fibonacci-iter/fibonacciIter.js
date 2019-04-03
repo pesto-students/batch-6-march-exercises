@@ -1,11 +1,15 @@
 
 const fibonacciIter = {
   [Symbol.iterator]() {
-    const currentValue = 1;
+    let previous = 0;
+    let current = 1;
     return {
       next() {
+        const currentValue = previous + current;
+        previous = current;
+        current = currentValue;
         return {
-          value: currentValue + 1,
+          value: currentValue,
           done: false,
         };
       },
