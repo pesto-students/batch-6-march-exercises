@@ -1,7 +1,7 @@
 hasValue = (prop, obj) => (prop in obj) ? obj[prop]: 'defaultValue'; 
 
 const handler = {
-  get (obj, prop){
+  set (obj, prop){
     return hasValue(prop, obj);
   }
 }
