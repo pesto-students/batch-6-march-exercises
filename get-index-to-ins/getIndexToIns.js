@@ -7,12 +7,12 @@ function getIndexToIns(...args) {
     return a - b;
   });
   
-  for(var i = 0; i < array.length; i++){
-    if(array[i] <= number ){
-      index = i;
+  for(index = 0; index < array.length; index++){
+    if(number <= array[index] ){
+      break;
     }  
   }
-  index = index === undefined ? array.length : index;
+  // index = index === undefined ? array.length : index;
   return index;
 }
 
