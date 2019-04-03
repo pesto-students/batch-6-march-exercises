@@ -1,8 +1,13 @@
 
-var knownProp = new Proxy(receiver, {
-  get: function(obj, prop) {
-      return prop in obj ?
-  }
+const knownProp = obj => {
+  return new Proxy(obj, {
+    get(target, propKey) {
+        if(target[propKey]){
+          return target[propKey];
+        }
+        return undefined;
+    }
+  })
 }
 
 
