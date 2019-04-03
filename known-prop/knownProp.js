@@ -2,10 +2,10 @@
 const knownProp = obj => {
   return new Proxy(obj, {
     get(target, propKey) {
-        if(target[propKey]){
-          return target[propKey];
+        if(!target[propKey]){
+          throw new TypeError("unknown type");
         }
-        return undefined;
+        return target[propKey];
     }
   })
 }
