@@ -1,6 +1,5 @@
 
 function privateProps(myObj, privacyFilter) {
-  console.log(privacyFilter);
   const handler = {
     get(obj, prop) {
       return privacyFilter(prop) in obj
