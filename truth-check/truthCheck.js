@@ -1,6 +1,6 @@
 
-function truthCheck(...args) {
-  return args;
+function truthCheck(objects, prop) {
+  return objects.every(el => Boolean(el[prop]));
 }
 
 export {
