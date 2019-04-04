@@ -1,12 +1,9 @@
 
 function factorial(n) {
-  var factorial = 1;
-  
-  for(var i = 1; i <= n; i++){
-    factorial = factorial * i;
+  if (n === 0) {
+    return 1;
   }
-  return factorial;
-
+  return n * factorial(n - 1);
 }
 
 export {

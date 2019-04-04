@@ -6,16 +6,16 @@
             "completed": true
         },
         "is-odd": {
-            "completed": false
+            "completed": true
         },
         "is-even": {
-            "completed": false
+            "completed": true
         },
         "is-triangle": {
             "completed": false
         },
         "counter": {
-            "completed": false
+            "completed": true
         },
         "counter-factory": {
             "completed": true
@@ -24,10 +24,10 @@
             "completed": false
         },
         "cache-function": {
-            "completed": false
+            "completed": true
         },
         "apply-operator": {
-            "completed": false
+            "completed": true
         },
         "boo-who": {
             "completed": true
