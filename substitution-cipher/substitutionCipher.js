@@ -7,11 +7,17 @@ function substitutionCipher(text) {
   return characters.reduce((acc, currentEl) => {
     let el = currentEl.charCodeAt(0);
     if (isUpper(currentEl)) {
-      el = el % 2 === 0 ? (el + 6) % 90 : (el + 4) % 90;
+      el = el % 2 === 0 ? (el + 6) : (el + 4);
+      if (el > 90) {
+        el = (el % 90) + 64;
+      }
       return acc + String.fromCharCode(el);
     }
     if (isLower(currentEl)) {
-      el = el % 2 === 0 ? (el + 6) % 122 : (el + 4) % 122;
+      el = el % 2 === 0 ? (el + 6) : (el + 4);
+      if (el > 122) {
+        el = (el % 122) + 96;
+      }
       return acc + String.fromCharCode(el);
     }
     return acc + currentEl;
