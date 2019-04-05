@@ -15,7 +15,7 @@
             "completed": false
         },
         "adding-vector-graphics-to-web": {
-            "completed": false
+            "completed": true
         },
         "canvas": {
             "completed": false
@@ -27,16 +27,16 @@
             "completed": false
         },
         "svg": {
-            "completed": false
+            "completed": true
         },
         "table": {
-            "completed": false
+            "completed": true
         },
         "html-video": {
-            "completed": false
+            "completed": true
         },
         "whatsapp": {
-            "completed": false
+            "completed": true
         }
     }
 }
