@@ -2,4 +2,33 @@ html {
   font-family: sans-serif;
 }
 
+body{
+  position: absolute;
+  top:  50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
 /* Your CSS below here */
+
+.cool-box {
+  width: 200px;
+}
+
+div {
+  width: 400px;
+  height: 100px;
+  background-color: rgb(141, 37, 37);
+  text-align: center;
+  border-radius: 15px 15px;
+}
+
+p {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%); 
+  font: bold 1.2em "Helvetica", serif,rgb(141, 37, 37);
+  text-shadow: 2px 2px rgb(26, 4, 4);
+  color: red;
+  margin-left: 90px;
+}
