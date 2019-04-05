@@ -32,7 +32,7 @@
     font-family: 'Passion One';
     font-size: 3.7em;
     color: white;
-    background: url(colorful-heart.png) left 23%;
+    background: url(colorful-heart.png) left 33% top 40% no-repeat;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
