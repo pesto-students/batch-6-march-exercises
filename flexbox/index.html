@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<head>
+<style>
+
+body {
+  background-color: #f8f8f8;
+  font-family: 'Lato';
+  line-height: 1.5;
+  font-size: 100%;
+}
+
+.container {
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.container >.article {
+  background-color:#42f4e8;
+  padding: 30px;
+  margin: 10px 10px;
+  width: 300px;
+  color: #666666;
+	box-sizing: border-box;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.article img {
+  max-width: 100%;
+  height: auto;
+}
+
+.article h2 {
+  color: #444;
+  margin-top: 0;
+}
+
+.heading {
+    text-align: center;
+    background: purple;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+h1{
+    color:white; 
+    font-family: amatic;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.flex-container > button {
+  background-color: #f1f1f1;
+  margin: 4px;
+  font-size: 20px;
+}
+</style>
+<body>
+    <div class="heading">
+        <h1>Complex Flexbox Example</h1>
+    </div>
+    <div class="container">
+  
+        <div class="article">
+          <h2>First Article</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut erat libero, interdum nec ullamcorper et, fermentum sit amet mi. Nunc elit lectus, consectetur sit amet eros quis, eleifend dictum sapien. Fusce vel est massa. Praesent volutpat fringilla felis.</p>
+        </div>
+        
+        <div class="article">
+          <h2>Second Article</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut erat libero, interdum nec ullamcorper et, fermentum sit amet mi. Nunc elit lectus, consectetur sit amet eros quis, eleifend dictum sapien. Fusce vel est massa. Praesent volutpat fringilla felis.</p>
+        </div>
+        
+        <div class="article" style="flex-grow:2">
+                <div class="flex-container">
+                        <button>smile</button>
+                        <button>laugh</button>
+                        <button>wink</button>  
+                        <button>shrug</button>
+                        <button>blush</button>
+                      </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut erat libero, interdum nec ullamcorper et, fermentum sit amet mi. Nunc elit lectus, consectetur sit amet eros quis, eleifend dictum sapien. Fusce vel est massa. Praesent volutpat fringilla felis.</p>
+        </div>
+    </div>
+</body>
