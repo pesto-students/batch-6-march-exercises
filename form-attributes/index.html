@@ -1,14 +1,17 @@
-<!-- Exercise:
-Disable the input field. -->
-
 <!DOCTYPE html>
 <html>
-<body>
 
-<form>
-  First name: <input type="text" name="firstname" value="John">
-  <input type="submit">
-</form>
+  <head>
+    <meta charset="utf-8">
+    <title>Form attributes example</title>
+  </head>
 
-</body>
+  <body>
+    <form>
+      <label for="firstname">First name:</label>
+      <input type="text" name="firstname" id="firstname" value="John" />
+      <input type="submit" disabled />
+    </form>
+  </body>
+
 </html>
