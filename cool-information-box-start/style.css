@@ -1,5 +1,16 @@
 html {
   font-family: sans-serif;
 }
-
 /* Your CSS below here */
+body p {
+  font-size: 70px;
+  text-align: center;
+  background-color: red;
+  border-radius: 10px;
+  max-width: 700px;
+  margin: 0 auto;
+  color: rgb(244, 66, 86);
+  text-shadow: 2px 2px 4px black;
+  box-shadow: 5px 5px black;
+  border: 1px solid darkred;
+}
