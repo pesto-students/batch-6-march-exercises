@@ -13,4 +13,6 @@ body p {
   text-shadow: 2px 2px 4px black;
   box-shadow: 5px 5px black;
   border: 1px solid darkred;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
