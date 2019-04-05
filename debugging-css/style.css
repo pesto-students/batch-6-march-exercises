@@ -31,12 +31,12 @@ header, footer {
   background-color: teal;
   width: 50em;
   height: 10em;
-  padding: 5em 0 0 0;
+  padding: 1em 0 0 0;
   margin: 0 20em 0 20em;
 }
 
 h1, footer p {
-  margin: -70px;
+  margin: 10px;
 }
 
 h1 {
@@ -48,6 +48,7 @@ h1 {
 
 main {
   padding: 2em;
+  align-content: center;
 }
 
 main p, main li {
@@ -55,6 +56,6 @@ main p, main li {
 }
 
 img {
-  float: right
+  float: right;
   margin: 1.2em 2em;
 }
