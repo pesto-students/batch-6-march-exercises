@@ -1,5 +1,31 @@
 html {
   font-family: sans-serif;
+  font-size: 16px;
 }
 
 /* Your CSS below here */
+
+.box {
+  margin: 10vh 10vw 10vh 20vw;
+  width: 20vw;
+  background-color: red;
+  border-radius: 1rem;
+  font-size: 2em;
+  color: red;
+  z-index: -1;
+  border: 2px solid maroon;
+
+
+}
+
+.inner-box {
+  border-radius: 0.9rem;
+  padding: 10px 10px 10px 10px;
+  box-shadow: 2px 2px 2px black;
+}
+
+.inner-box > center {
+  z-index: 1;
+  text-shadow: 2px 2px 2px black;
+
+}
