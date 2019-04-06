@@ -1,0 +1,38 @@
+.heart-container {
+    height: 10em;
+    display: inline-block;
+}
+
+
+.heart-container img, .heart-container div {
+    height: inherit;
+}
+
+.heart-container h1 {
+    position: absolute;
+    top: 0.2em;
+    left: 0.55em;
+    font-family: 'Passion One';
+    font-size: 3.7em;
+}
+
+.heart-background {
+    height: 10em;
+    display: inline-block;
+}
+
+.heart-background div {
+    position: absolute;
+    top: 0;
+}
+.heart-background h1 {
+    position: absolute;
+    top: 0.2em;
+    left: 0.55em;
+    font-family: 'Passion One';
+    font-size: 3.7em;
+    color: white;
+    background: url(colorful-heart.png) left 33% top 40% no-repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
