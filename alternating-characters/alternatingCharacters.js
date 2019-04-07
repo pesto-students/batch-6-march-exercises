@@ -1,15 +1,17 @@
-function minToCharsToDelForAlternateStr(string) {
-  const tempArray = [];
-  const stringChars = string.split('');
-  return stringChars.reduce(function (minCharsToDel, currentValue) {
-      
-  }, 0);
+function charsToDelete(string) {
+  let deletions = 0;
+  let prevChar;
+  for (const char of string) {
+    if (prevChar === char) {
+      deletions += 1;
+    }
+    prevChar = char;
+  }
+  return deletions;
 }
 
 function alternatingCharacters(strings) {
-  return strings.reduce(function(acc, currentValue) {
-    return acc.concat([ minToCharsToDelForAlternateStr(currentValue) ])
-  }, []);
+  return strings.reduce((acc, currentValue) => [...acc, charsToDelete(currentValue)], []);
 }
 
 export {
