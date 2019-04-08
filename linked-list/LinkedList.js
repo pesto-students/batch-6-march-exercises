@@ -1,4 +1,3 @@
-
 function linkedList(...args) {
   return args;
 }

@@ -11,6 +11,25 @@ It should open the whatsapp app on mobile and the message should appear in the a
   <title>Document</title>
 </head>
 <body>
-  
+  <form id="message-form">
+    <label for="whatsapp-message">
+      Message
+    <textarea name="text" id="whatsapp-message"  cols="30" rows="10">
+    </textarea>
+    </label>
+    <input type="submit" />
+  </form>
+  <script>
+    var textEl = document.getElementById("whatsapp-message");
+    var shareMessageEl = document.getElementById('message-form');
+    var textMessage = ''
+    textEl.addEventListener('change', function(event){
+      textMessage += event.target.value;
+    })
+    shareMessageEl.addEventListener('submit', function(){
+      shareMessageEl.setAttribute('action', "https://wa.me/?text="+encodeURIComponent(textMessage));
+    })
+
+  </script>
 </body>
 </html>
