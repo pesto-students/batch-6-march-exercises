@@ -21,25 +21,25 @@
             "completed": false
         },
         "debugging-html": {
-            "completed": false
+            "completed": true
         },
         "form-attributes": {
-            "completed": false
+            "completed": true
         },
         "form": {
-            "completed": false
+            "completed": true
         },
         "html-classes": {
-            "completed": false
+            "completed": true
         },
         "html-text-formatting": {
-            "completed": false
+            "completed": true
         },
         "iframe": {
-            "completed": false
+            "completed": true
         },
         "navigation-menu-start": {
-            "completed": false
+            "completed": true
         },
         "strikeout": {
             "completed": false
