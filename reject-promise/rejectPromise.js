@@ -1,7 +1,7 @@
 
-function rejectPromise(...args) {
-  return args;
-}
+let rejectPromise = new Promise(function(resolve, reject) {
+  resolve("REJECTED!");
+});
 
 export {
   rejectPromise,
