@@ -2,7 +2,7 @@
 
 html {
   font-family: 'Helvetica neue', Arial, 'sans serif';
-  font-size: 10px;
+  font-size: 16px;
 }
 
 body {
@@ -11,7 +11,6 @@ body {
 }
 
 /* Typography */
-
 h1 {
   font-size: 4em;
 }
@@ -29,13 +28,15 @@ pli {
 /* header and footer */
 
 header, footer {
-  background-colour: teal;
+  background-color: teal;
+  width: 50em;
   height: 10em;
-  padding: 2em;
+  padding: 1em 0 0 0;
+  margin: 0 20em 0 20em;
 }
 
 h1, footer p {
-  margin: -70px;
+  margin: 10px;
 }
 
 h1 {
@@ -47,6 +48,7 @@ h1 {
 
 main {
   padding: 2em;
+  align-content: center;
 }
 
 main p, main li {
@@ -54,6 +56,6 @@ main p, main li {
 }
 
 img {
-  float: right
+  float: right;
   margin: 1.2em 2em;
 }
