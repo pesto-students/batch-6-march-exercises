@@ -1,6 +1,12 @@
 
-function type(...args) {
-  return args;
+function type(param) {
+  if (param === null) {
+    return 'Null';
+  }
+  if (param === undefined) {
+    return 'Undefined';
+  }
+  return param.constructor.name;
 }
 
 export {
