@@ -1,6 +1,6 @@
 
 function returnAStringTest(...args) {
-  return args;
+  return "hello";
 }
 
 export {
