@@ -1,12 +1,36 @@
-<!-- Write a JavaScript function that accept row, column, (to identify a particular cell)
-  and a string to update the content of that cell. -->
 
 <!DOCTYPE html>
 <html>
 
 <head>
   <meta charset=utf-8 />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Change the content of a cell</title>
+
+  <style>
+    body {
+      padding: 10px;
+    }
+  </style>
+  <script>
+    function changeContent() {
+      const rowNumber = document.getElementById('row-number').value;
+      const colNumber = document.getElementById('col-number').value;
+      const textToUpdate = document.getElementById('text-to-update').value;      
+
+      const table = document.getElementById('myTable');
+      const rows = table.rows;
+      const row = rows[rowNumber-1];
+
+      if(row !== undefined) {
+        const cells = row.cells;
+        const cell = cells[colNumber-1];
+        if (cell !== undefined) {          
+          cell.innerText = textToUpdate;
+        }
+      }
+    }    
+  </script>
 </head>
 
 <body>
@@ -24,7 +48,14 @@
       <td>Row3 cell2</td>
     </tr>
   </table>
+  <br/>
   <form>
+    <label>Row number <input type="number" id="row-number" /></label>
+    <br/>
+    <label>Column number <input type="number" id="col-number" /></label>
+    <br/>
+    <label>Text to update <input type="text" id="text-to-update" /></label>
+    <br />
     <input type="button" onclick="changeContent()" value="Change content">
   </form>
 </body>
