@@ -1,6 +1,6 @@
 
-function timeout(...args) {
-  return args;
+function timeout(value) {
+  return Promise.resolve(value);
 }
 
 export {
