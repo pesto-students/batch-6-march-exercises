@@ -1,6 +1,6 @@
 
-function objectAssign(...args) {
-  return args;
+function objectAssign(...objects) {
+  return Object.assign(...objects);
 }
 
 export {
