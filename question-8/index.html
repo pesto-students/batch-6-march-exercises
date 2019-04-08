@@ -25,5 +25,13 @@
     <input type="button" onclick="getOptions()" value="Count and Output all items">
   </form>
 </body>
-
+<script>
+var getOptions = () => {
+  var options=[];
+ for(var i=0;i<mySelect.length;i++){
+  options.push(mySelect.options[i].value)
+ }
+  alert("Count : " + mySelect.length + " \n " +  JSON.stringify(options))
+}
+</script>
 </html>

@@ -1,4 +1,4 @@
-<!-- Write a JavaScript function to add rows to a table -->
+ 
 
 <!DOCTYPE html>
 <html>
@@ -22,5 +22,13 @@
   <br>
   <input type="button" onclick="insert_Row()" value="Insert row">
 </body>
-
+<script>
+  var row=3;
+var insert_Row = ()=>{
+  var sampleTable = document.getElementById("sampleTable");
+  var currentTable= sampleTable.innerHTML;
+  sampleTable.innerHTML=currentTable + '<tr> <td>Row'+ row +' cell1</td><td>Row'+ row +' cell2</td>  </tr>' ;
+  row++;
+}
+</script>
 </html>
