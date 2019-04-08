@@ -1,11 +1,38 @@
-<!-- Here is a sample html file with a submit button. Write a JavaScript function to
-get the value of the href, hreflang, rel, target, and type attributes of the specified link -->
-
 <!DOCTYPE html>
 <html>
 
 <head>
   <meta charset=utf-8 />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Attributes</title>
+
+  <style>
+    body {
+      padding-left: 10px;
+    }
+  </style>
+  <script>
+    function appendPTagToBody(text){
+      const p = document.createElement("p");
+      p.innerText = text;
+      document.body.appendChild(p);
+    };
+
+    function getAttributes(){
+      const element = document.getElementById('w3r');
+      const href = element.getAttribute('href');
+      const hreflang = element.getAttribute('hreflang');
+      const rel = element.getAttribute('rel');
+      const target = element.getAttribute('target');
+      const type = element.getAttribute('type');
+
+      appendPTagToBody("href: " + href);
+      appendPTagToBody("hreflang: " + hreflang);
+      appendPTagToBody("rel: " + rel);
+      appendPTagToBody("target: " + target);
+      appendPTagToBody("type: " + type);
+    }
+  </script>
 </head>
 
 <body>
