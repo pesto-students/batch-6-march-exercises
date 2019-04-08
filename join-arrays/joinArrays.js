@@ -1,8 +1,5 @@
 
-function joinArrays(...args) {
-  return args;
-}
-
+const joinArrays = (arr)=> arr.flat();
 export {
   joinArrays,
 };

@@ -1,7 +1,9 @@
 
-function printFullName(...args) {
-  return args;
-}
+const printFullName =((obj)=> {
+  const {first, last} = obj;
+  return first + ' ' + last;
+})
+  
 
 export {
   printFullName,
