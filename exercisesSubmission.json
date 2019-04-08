@@ -9,7 +9,7 @@
             "completed": false
         },
         "linked-list": {
-            "completed": false
+            "completed": true
         },
         "bizarre-string-incrementer": {
             "completed": false
@@ -24,7 +24,7 @@
             "completed": false
         },
         "map": {
-            "completed": false
+            "completed": true
         },
         "svg": {
             "completed": false
@@ -33,7 +33,7 @@
             "completed": false
         },
         "html-video": {
-            "completed": false
+            "completed": true
         },
         "whatsapp": {
             "completed": false
