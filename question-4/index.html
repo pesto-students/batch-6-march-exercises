@@ -5,7 +5,32 @@
 
 <head>
   <meta charset=utf-8 />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Insert row in a table</title>
+
+  <style>
+    body {
+      padding-left: 10px;
+      padding-top: 10px;
+    }
+  </style>
+
+  <script>
+    function insert_Row(){
+      const table = document.getElementById('sampleTable');
+      let rows = table.rows.length;
+      rows++;
+
+      const newRow = table.insertRow(-1);
+
+      const cell1 = newRow.insertCell(0);
+      const cell2 = newRow.insertCell(1);
+
+      cell1.innerHTML = "Row"+rows+" cell1";
+      cell2.innerHTML = "Row"+rows+" cell2";
+    }
+
+  </script>
 </head>
 
 <body>
