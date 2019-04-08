@@ -11,7 +11,29 @@
 </head>
 
 <body>
+    <p><a href="#" onMouseOver="highlight()" onMouseOut="return_normal()">On mouse here</a></p> 
+    <p><strong>Hi</strong> here is a string where some of the content is in <strong>bold</strong> letters.</p>
+      
+<script>
+    let boldWords = document.getElementsByTagName('strong'); 
 
+
+  function highlight() 
+  {
+      for (let i=0; i<boldWords.length; i++)
+      {                                                    
+      boldWords[i].style.color = "green";
+      }
+  }
+  
+  function return_normal()
+  {
+    for (var i=0; i<boldWords.length; i++) 
+    {
+          boldWords[i].style.color = "black";
+    }
+  }
+</script>
 </body>
 
 </html>
