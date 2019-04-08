@@ -1,4 +1,4 @@
-const factorial = (number) => {
+const factorial = number => {
   let fact = 1;
   while (number !== 0) {
     fact *= number;
@@ -7,7 +7,6 @@ const factorial = (number) => {
   }
   return fact;
 };
-
 
 describe('factorial test', () => {
   test('should find factorial of an integer', () => {
@@ -19,6 +18,6 @@ describe('factorial test', () => {
 
   test('should find factorial of 0', () => {
     // delete next line and replace it with proper test
-    expect(true).toEqual(false);
+    expect(factorial(0)).toEqual(1);
   });
 });
