@@ -21,13 +21,13 @@
             "completed": false
         },
         "debugging-html": {
-            "completed": false
+            "completed": true
         },
         "form-attributes": {
             "completed": false
         },
         "form": {
-            "completed": false
+            "completed": true
         },
         "html-classes": {
             "completed": false
