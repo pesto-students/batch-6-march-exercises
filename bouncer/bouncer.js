@@ -1,6 +1,8 @@
 
-function bouncer(...args) {
-  return args;
+function bouncer(array) {
+  return array.filter((value) => {
+    return Boolean(value);
+  });
 }
 
 export {
