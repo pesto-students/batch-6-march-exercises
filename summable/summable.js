@@ -1,6 +1,6 @@
 
-function summable(...args) {
-  return args;
+function summable(target, arr) {
+  
 }
 
 export {
