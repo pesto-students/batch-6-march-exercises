@@ -1,5 +1,3 @@
-<!-- Write a JavaScript function that creates a table, accept row, column numbers from the
-  user, and input row-column number as content (e.g. Row-0 Column-0) of a cell. -->
 
 <!DOCTYPE html>
 <html>
@@ -12,14 +10,35 @@
       margin: 30px;
     }
   </style>
+  <script>
+    function createTable() {
+      let rowNumber = document.getElementById('row-number').value;
+      let colNumber = document.getElementById('col-number').value;
+      const table = document.getElementById('myTable');
+
+      for (let row = 0; row < rowNumber; row++) {
+        const newRow = table.insertRow(row);
+        for (let col = 0; col < colNumber; col++) {
+          const cell = newRow.insertCell(col);
+          cell.innerHTML = "Row"+(row+1)+" cell"+(col+1);
+        }
+      }
+    }
+  </script>
 </head>
 
-<body>
-  <table id="myTable" border="1">
-  </table>
+<body>  
   <form>
+      <label>Row number <input type="number" id="row-number" /></label>
+      <br/>
+      <label>Column number <input type="number" id="col-number" /></label>
+      <br/>
     <input type="button" onclick="createTable()" value="Create the table">
   </form>
+  <br/>
+  <br/>
+  <table id="myTable" border="1">
+    </table>
 </body>
 
 </html>
