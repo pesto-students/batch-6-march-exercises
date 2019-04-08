@@ -1,8 +1,7 @@
+import { isBoolean } from "util";
 
-function boolean(...args) {
-  return args;
+function boolean(value) {
+  return isBoolean(value);
 }
 
-export {
-  boolean,
-};
+export { boolean };

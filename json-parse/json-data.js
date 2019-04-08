@@ -2,7 +2,7 @@
 const clubMember = {
   firstname: 'John',
   lastname: 'Doe',
-  memberStatus: 'Full',
+  memberStatus: 'Full' 
 };
 
 const Sara = '{ "height":1.9, "age":36, "eyeColor":"brown"}';
