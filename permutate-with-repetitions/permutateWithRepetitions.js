@@ -1,6 +1,11 @@
+function permutateWithRepetitions(arr) {
+  if(arr.length === 1 ){
+    return arr;
+  } 
 
-function permutateWithRepetitions(...args) {
-  return args;
+  const permutations = [];
+ 
+  
 }
 
 export {
