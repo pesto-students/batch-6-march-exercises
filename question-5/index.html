@@ -27,6 +27,16 @@
   <form>
     <input type="button" onclick="changeContent()" value="Change content">
   </form>
+  <script>
+  function changeContent(){
+    let updateTable = document.getElementById("my-table");
+    let rn = window.prompt("Input the Row number");
+    let cn = window.prompt("Input the Column number");
+    let content = window.prompt("Input the Cell content");
+    var x=document.getElementById('myTable').rows[rn].cells;
+    x[cn].innerHTML=content;
+  }
+  </script>
 </body>
 
 </html>
