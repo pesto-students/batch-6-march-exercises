@@ -1,25 +1,36 @@
-<!-- Write a JavaScript function that creates a table, accept row, column numbers from the
-  user, and input row-column number as content (e.g. Row-0 Column-0) of a cell. -->
-
 <!DOCTYPE html>
 <html>
 
-<head>
-  <meta charset=utf-8 />
-  <title>Change the content of a cell</title>
-  <style type="text/css">
-    body {
-      margin: 30px;
-    }
-  </style>
-</head>
+  <head>
+    <meta charset=utf-8 />
+    <title>Add cells to table</title>
+    <style type="text/css">
+      body {
+        margin: 30px;
+      }
+    </style>
 
-<body>
-  <table id="myTable" border="1">
-  </table>
-  <form>
-    <input type="button" onclick="createTable()" value="Create the table">
-  </form>
-</body>
+    <script type="text/javascript">
+    const createTable = (rows, cols) => {
+      const tableRef = document.getElementById('myTable');
+      for (let i = 0; i < rows; i++) {
+        const row = tableRef.insertRow(i);
+
+        for(let j = 0; j < cols; j++) {
+          const cell = row.insertCell(j);
+          cell.innerHTML = `Row-${i} Column-${j}`;
+        }
+      }
+    };
+    </script>
+  </head>
+
+  <body>
+    <table id="myTable" border="1">
+    </table>
+    <form>
+      <input type="button" onclick="createTable(3, 4)" value="Create the table">
+    </form>
+  </body>
 
 </html>

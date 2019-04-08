@@ -1,16 +1,23 @@
 <!DOCTYPE html>
+
 <html>
+  <head>
+    <meta charset=utf-8 />
+    <title>JS DOM paragraph style</title>
 
-<head>
-  <meta charset=utf-8 />
-  <title>JS DOM paragraph style</title>
-</head>
+    <script type="text/javascript">
+      const js_style = () => {
+        const paragraph = document.getElementById('text');
+        paragraph.style.cssText = "color: green; font-weight: bold;"
+      }
+    </script>
+  </head>
 
-<body>
-  <p id='text'>JavaScript Exercises</p>
-  <div>
-    <button id="jsstyle" onclick="js_style()">Style</button>
-  </div>
-</body>
+  <body>
+    <p id='text'>JavaScript Exercises</p>
+    <div>
+      <button id="jsstyle" onclick="js_style()">Style</button>
+    </div>
+  </body>
 
 </html>
