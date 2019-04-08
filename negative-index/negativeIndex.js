@@ -1,6 +1,6 @@
 
-function negativeIndex(...args) {
-  return args;
+function negativeIndex(arr) {
+  return arr;
 }
 
 export {
