@@ -10,6 +10,16 @@
   <p id='text'>JavaScript Exercises</p>
   <div>
     <button id="jsstyle" onclick="js_style()">Style</button>
+    <script>
+      const text = document.getElementById('text');
+      const button = document.getElementById('jsstyle');
+      let currentIndex = 0;
+      const colors = ['green', 'red', 'blue']
+      function js_style(){
+        currentIndex = currentIndex >= 2 ? 0 : currentIndex + 1;
+        text.setAttribute('style', `background-color: ${colors[currentIndex]}`);
+      }
+    </script>
   </div>
 </body>
 
