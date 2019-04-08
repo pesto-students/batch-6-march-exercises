@@ -7,11 +7,18 @@
 
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Input</title>
+  </head>
 <body>
 
 <form>
-  Quantity (between 1 and 5):
-  <input type="submit">
+  <label>
+    Quantity
+    <input for="quantity" type="submit" />
+  </label>
+  <input type="number" name="quantity" min="1" max="5"/>
 </form>
 
 </body>
