@@ -3,23 +3,38 @@
 
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Change the content of a cell</title>
+    <style type="text/css">
+      body {
+        margin: 30px;
+      }
+    </style>
+  </head>
 
-<head>
-  <meta charset=utf-8 />
-  <title>Change the content of a cell</title>
-  <style type="text/css">
-    body {
-      margin: 30px;
-    }
-  </style>
-</head>
-
-<body>
-  <table id="myTable" border="1">
-  </table>
-  <form>
-    <input type="button" onclick="createTable()" value="Create the table">
-  </form>
-</body>
-
+  <body>
+    <table id="myTable" border="1"></table>
+    <div id="tableContainer"></div>
+    <form>
+      <input type="button" onclick="createTable()" value="Create the table" />
+    </form>
+  </body>
+  <script>
+    var createTableByDetails = (row, column) => {
+      var tableContainer = document.getElementById("tableContainer");
+      var newTable = document.createElement("TABLE");
+      for (i = 0; i < row; i++) {
+        var tableRow = newTable.insertRow(i);
+        for (var j = 0; j < column; j++) {
+          var cell = tableRow.insertCell(j);
+          cell.innerHTML = "Row-" + i + " " + "Col-" + j;
+        }
+      }
+      tableContainer.appendChild(newTable);
+    };
+    var createTable = () => {
+      createTableByDetails(7, 6);
+    };
+  </script>
 </html>
