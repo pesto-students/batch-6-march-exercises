@@ -1,6 +1,7 @@
+const binaryToChar = binary => String.fromCharCode(parseInt(binary, 2));
 
-function binaryAgent(...args) {
-  return args;
+function binaryAgent(binaryString) {
+  return binaryString.split(' ').reduce((acc, current) => acc + binaryToChar(current), '');
 }
 
 export {
