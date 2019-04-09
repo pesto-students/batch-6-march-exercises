@@ -11,8 +11,55 @@ Use the childNodes property to access a group of child elements -->
 <html>
 
 <head>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JavaScript and the Document Object Model</title>
+
+  <style>
+    body {
+      padding: 20px;
+    }
+  </style>
+  <script>
+    function start() {      
+      const contentDiv = document.getElementById('content');      
+      const firstChild = contentDiv.firstElementChild;
+      const nextSibling = firstChild.nextElementSibling;
+      const lastChild = contentDiv.lastElementChild;
+      const previousSibling = lastChild.previousElementSibling;
+    
+      setTimeout(function () {
+        firstChild.innerHTML = "Changed using firstElementChild property";  
+      }, 800);
+
+      setTimeout(function () {
+        nextSibling.innerHTML = "Changed using nextElementSibling property";        
+      }, 1600);
+
+      setTimeout(function () {
+        lastChild.innerHTML = "Changed using lastElementChild property";  
+      }, 2400);
+
+      setTimeout(function () {
+        previousSibling.innerHTML = "Changed using previousElementSibling property";  
+      }, 3200);
+
+      setTimeout(function () {
+        const titleElement = document.getElementById('title');
+        const parent = titleElement.parentElement;
+        parent.innerHTML = '<h3>Changed using parentElement property</h3>';
+      }, 4000);
+
+      setTimeout(function () {
+        const element = document.getElementById('header');
+        const childs = element.children;
+        const childNode = childs[0];
+        childNode.textContent = "Changed using childNode property";
+        childNode.style.color = "red";        
+      }, 4800);
+};
+    
+  </script>
 </head>
 
 <body>
@@ -20,18 +67,20 @@ Use the childNodes property to access a group of child elements -->
   <div id="page">
   
     <div id="header">
-      <h1 id="title">Page title</h1>
+      <h1 id="title">DOM Node Property Examples</h1>
     </div>
   
     <div id="content">
     
-      <h2>Content title</h2>
+      <h2>First Element Child</h2>
     
-      <p>Some copy goes here</p>
+      <p>Second Element Child</p>
     
-      <p>More copy goes here</p>
+      <p>Last Element Child</p>
       </div>
     </div>
+
+    <button onclick="start()">Start</button>
 </body>
 
 </html>
