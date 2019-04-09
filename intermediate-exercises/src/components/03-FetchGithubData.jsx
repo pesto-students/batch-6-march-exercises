@@ -1,6 +1,10 @@
+/* eslint-disable no-undef */
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/forbid-prop-types */
+/* eslint-disable react/require-default-props */
+/* eslint-disable import/no-unresolved */
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
-// import axios from 'axios';
+import PropTypes from 'prop-types';
 
 /**
  * Axios is a promise based HTTP client for the browser and node.js.
@@ -20,19 +24,19 @@ import React, { Component } from 'react';
  *  https://api.github.com/users/{username}/repos
  */
 /* eslint-disable react/no-unused-state */
-const GithubRepos = ({ repos }) => {
-  return (
-    <ul>
-      {/* Task: The list of repos here */}
-    </ul>
-  );
-}
+const GithubRepos = ({ repos }) => (
+  <ul>
+    {repos.map(repo => (
+      <li key={repo.id}>{repo.name}</li>
+    ))}
+  </ul>
+);
 
 // Task: Open the console in the browser. There will be a warning
 // about incorrect prop type for user.
 // Define the correct prop type for the prop `repos`
 GithubRepos.propTypes = {
-
+  repos: PropTypes.array,
 };
 
 /* eslint-disable react/no-multi-comp */
@@ -43,21 +47,29 @@ class UsernameForm extends Component {
       username: '',
       repos: [],
     };
+    this.input = React.createRef();
+    this.updateUserName = this.updateUserName.bind(this);
   }
+
+  componentDidUpdate() {
+    fetch(`https://api.github.com/users/${this.state.username}/repos`)
+      .then(res => res.json())
+      .then(data => this.setState({ repos: data }));
+  }
+
+  updateUserName(e) {
+    e.preventDefault();
+    this.setState({ username: this.input.current.value });
+  }
+
   render() {
     return (
       <div>
-        <input
-          type="text"
-          name="username"
-        />
-        <button
-          onClick={() => {}}
-        >
-          Get Repos
-        </button>
-        {/* Task: Display the results here. Use GithubRepos Component.
-          It should be a list of repos of the user entered */}
+        <form onSubmit={this.updateUserName}>
+          <input ref={this.input} type="text" name="username" />
+          <input type="submit" onClick={this.updateUserName} value="Get Repos" />
+        </form>
+        {<GithubRepos repos={this.state.repos} />}
       </div>
     );
   }
