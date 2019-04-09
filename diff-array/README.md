@@ -1,4 +1,4 @@
-# Instructions 
+# Instructions
 
 Compare two arrays and return a new array with any items only found
 in one of the two given arrays, but not both. In other words, return
