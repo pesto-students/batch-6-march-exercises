@@ -6,7 +6,7 @@
             "completed": true
         },
         "chunk-array-in-groups": {
-            "completed": false
+            "completed": true
         },
         "find-element": {
             "completed": true
@@ -27,7 +27,7 @@
             "completed": false
         },
         "object-keys": {
-            "completed": false
+            "completed": true
         },
         "object-values": {
             "completed": true
@@ -45,7 +45,7 @@
             "completed": true
         },
         "user-check-password": {
-            "completed": false
+            "completed": true
         }
     }
 }
