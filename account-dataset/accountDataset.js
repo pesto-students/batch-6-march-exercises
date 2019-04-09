@@ -19,9 +19,12 @@
 //   return sumInDecimal;
 // }
 
+// function getStateBalances(balance) {
+
+// }
+
 // function sumOfInterests() {
-//   const stateBalance = dataset.bankBalances.reduce((accumulatedBalance, currentValue) => {
-//     const { state, amount } = currentValue;
+//   const stateBalance = dataset.bankBalances.reduce((accumulatedBalance, { state, amount }) => {
 //     if (!(state in accumulatedBalance)) {
 //       accumulatedBalance[state] = amount;
 //     } else {
@@ -36,10 +39,14 @@
 //   for (const state in stateBalance) {
 //     const balanceWithInterest = getInterest(parseFloat(stateBalance[state]));
 //     totalBalance += balanceWithInterest;
-//     console.log(totalBalance)
+//     // console.log(totalBalance)
 //   }
 //   const balanceInDecimal = parseFloat(totalBalance.toFixed(2));
 //   return balanceInDecimal;
+// }
+
+// function higherStateSums() {
+
 // }
 
 // export {
@@ -47,4 +54,5 @@
 //   datasetWithRoundedDollar,
 //   sumOfBankBalances,
 //   sumOfInterests,
+//   higherStateSums,
 // };
