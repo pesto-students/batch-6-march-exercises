@@ -1,9 +1,7 @@
 
 function objectInvert(objectToInvert) {
-  return Object.entries(objectToInvert).reduce((invertedObject, currentArray) => {
-    invertedObject[currentArray[1]] = currentArray[0]; // eslint-disable-line
-    return invertedObject;
-  }, {});
+  const objEntries = Object.entries(objectToInvert);
+  return objEntries.reduce((acc, current) => ({ ...acc, [current[1]]: current[0] }), {});
 }
 
 export {

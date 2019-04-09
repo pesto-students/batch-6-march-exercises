@@ -15,7 +15,7 @@
             "completed": true
         },
         "update-inventory": {
-            "completed": false
+            "completed": true
         },
         "smallest-commons": {
             "completed": true
@@ -24,7 +24,7 @@
             "completed": true
         },
         "orbital-period": {
-            "completed": false
+            "completed": true
         },
         "object-keys": {
             "completed": true
@@ -36,7 +36,7 @@
             "completed": true
         },
         "object-pairs": {
-            "completed": false
+            "completed": true
         },
         "object-invert": {
             "completed": true
@@ -45,7 +45,7 @@
             "completed": true
         },
         "user-check-password": {
-            "completed": false
+            "completed": true
         }
     }
 }
