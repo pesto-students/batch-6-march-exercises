@@ -1,14 +1,3 @@
-
-function findAllMultipliers(partialMultipliers, low, high) {
-  if (low > high) {
-    return partialMultipliers;
-  }
-  const hasAMultiple = partialMultipliers.some(number => number % high === 0);
-  if (!hasAMultiple) {
-    partialMultipliers.push(high);
-  }
-  return findAllMultipliers(partialMultipliers, low, high - 1);
-}
 function smallestCommons(numbers) {
   let smallerNumber;
   let largerNumber;
@@ -17,8 +6,20 @@ function smallestCommons(numbers) {
   } else {
     [largerNumber, smallerNumber] = numbers;
   }
-  const allMultipliers = findAllMultipliers([], smallerNumber, largerNumber);
-  return allMultipliers.reduce((accumulator, currentValue) => accumulator * currentValue);
+  let i = largerNumber;
+  while (true) {
+    let num = smallerNumber;
+    for (; num <= largerNumber; num += 1) {
+      if (i % num !== 0) {
+        break;
+      }
+    }
+    if (num > largerNumber) {
+      break;
+    }
+    i += 1;
+  }
+  return i;
 }
 
 export {
