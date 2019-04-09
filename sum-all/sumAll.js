@@ -1,15 +1,11 @@
 
 function sumAll(numbers) {
-  const firstNumber = numbers[0];
-  const secondNumber = numbers[1];
   let high;
   let low;
-  if (firstNumber > secondNumber) {
-    low = secondNumber;
-    high = firstNumber;
+  if (numbers[0] > numbers[1]) {
+    [high, low] = numbers;
   } else {
-    low = firstNumber;
-    high = secondNumber;
+    [low, high] = numbers;
   }
 
   let sum = 0;
