@@ -1,26 +1,65 @@
 import React, { Component } from 'react';
 
-/*
-* Exercise 2:
-*
-*  Create a `StopWatch` component that has a Start/Stop button and a Clear
-*  button.
-*
-*  Pressing Start will start a timer and the lapsed time in
-*  milliseconds should be displayed above the buttons.
-*
-*  Once started the Start button should change to Stop. Clicking Stop
-*  will stop the timer but lapsed time will be preserved.
-*
-*  Clicking Start again will resume the timer from where it left off.
-*
-*  Clicking Clear will stop the timer if it's running and reset the lapsed time to 0.
-*/
-
 class StopWatch extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      timeLapsed: 0,
+      isStopped: true,
+    };
+
+    this.intervalId = null;
+
+    this.handleStartStop = this.handleStartStop.bind(this);
+    this.handleClear = this.handleClear.bind(this);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.intervalId);
+  }
+
+  handleStartStop() {
+    const { isStopped } = this.state;
+    if (!isStopped) {
+      clearInterval(this.intervalId);
+      this.setState({ isStopped: true })
+    } else {
+      this.setState({ isStopped: false });
+      this.intervalId = setInterval(() => {
+        let { timeLapsed } = this.state;
+        timeLapsed += 1;
+        this.setState({ timeLapsed });
+      }, 1);
+    }
+  }
+
+  handleClear() {
+    clearInterval(this.intervalId);
+    this.setState({ timeLapsed: 0, isStopped: true });
+  }
+
   render() {
+    const buttonText = this.state.isStopped ? 'Start' : 'Stop';
+    const buttonStyle = {
+      height: '30px',
+      width: '100px',
+      margin: '15px',
+    };
+
+    const timeStyle = {
+      fontSize: '100px',
+      color: this.state.isStopped ? 'black' : 'green',
+    };
+
     return (
-      <div>Stop Watch</div>
+      <div>
+        <h2>Stop Watch</h2>
+        <div style={timeStyle}>{this.state.timeLapsed}</div>
+        <div>
+          <button style={buttonStyle} onClick={this.handleStartStop}>{buttonText}</button>
+          <button style={buttonStyle} onClick={this.handleClear}>Clear</button>
+        </div>
+      </div>
     );
   }
 }

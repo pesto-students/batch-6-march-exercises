@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
-// import axios from 'axios';
+import PropTypes from 'prop-types';
+import axios from 'axios';
 
 /**
  * Axios is a promise based HTTP client for the browser and node.js.
@@ -21,12 +21,14 @@ import React, { Component } from 'react';
  */
 /* eslint-disable react/no-unused-state */
 const GithubRepos = ({ repos }) => {
+  const children = repos.map(repo =>
+    (<li key={repo}>
+      {repo}
+     </li>));
   return (
-    <ul>
-      {/* Task: The list of repos here */}
-    </ul>
+    <ul>{children}</ul>
   );
-}
+};
 
 // Task: Open the console in the browser. There will be a warning
 // about incorrect prop type for user.
@@ -43,19 +45,37 @@ class UsernameForm extends Component {
       username: '',
       repos: [],
     };
+    this.updateUserName = this.updateUserName.bind(this);
+    this.fetchData = this.fetchData.bind(this);
   }
+
+  updateUserName(event) {
+    this.setState({ username: event.target.value });
+  }
+
+  fetchData() {
+    axios.get(`https://api.github.com/users/${this.state.username}/repos`)
+      .then((response) => {
+        const names = response.data.map(repo => repo.name);
+        this.setState({ repos: names });
+      });
+  }
+
   render() {
     return (
       <div>
         <input
           type="text"
           name="username"
+          value={this.state.username}
+          onChange={this.updateUserName}
         />
         <button
-          onClick={() => {}}
+          onClick={this.fetchData}
         >
           Get Repos
         </button>
+        <GithubRepos repos={this.state.repos} />
         {/* Task: Display the results here. Use GithubRepos Component.
           It should be a list of repos of the user entered */}
       </div>
