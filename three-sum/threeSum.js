@@ -1,13 +1,16 @@
 /* eslint-disable no-continue */
+const isArgValid = (arr, target) => arr.length >= 3 && Number.isInteger(target);
 function threeSum(arr, target) {
+  if (!isArgValid(arr, target)) {
+    return () => {
+      throw new Error();
+    };
+  }
   const sortedArray = [...arr].sort((a, b) => a - b);
   const results = [];
   let rightIndex = sortedArray.length - 1;
-  let leftIndex = 0;
+  let leftIndex = 1;
   for (let index = 0; index < sortedArray.length; index += 1) {
-    if (index > 0 && sortedArray[index] === sortedArray[index - 1]) {
-      continue;
-    }
     while (leftIndex < rightIndex) {
       const currentSum = sortedArray[index] + sortedArray[leftIndex] + sortedArray[rightIndex];
       if (currentSum === target) {
@@ -27,7 +30,7 @@ function threeSum(arr, target) {
       }
     }
   }
-  return results[0];
+  return results[0] ? results[0] : null;
 }
 
 // console.log(threeSum([5, 3, 2, 1, 0, -1, -2], 3));
