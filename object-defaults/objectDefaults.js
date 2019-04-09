@@ -1,6 +1,6 @@
 
-function objectDefaults(...args) {
-  return args;
+function objectDefaults(originalObject, objectWithDefaults) {
+  return { ...objectWithDefaults, ...originalObject };
 }
 
 export {
