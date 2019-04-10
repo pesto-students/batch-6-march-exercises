@@ -1,8 +1,8 @@
-
-function bind(...args) {
-  return args;
+function bind(fn, thisArg, ...args) {
+  if (args.length > 0) {
+    return fn.bind(thisArg, ...args);
+  }
+  return fn.bind(thisArg);
 }
 
-export {
-  bind,
-};
+export { bind };
