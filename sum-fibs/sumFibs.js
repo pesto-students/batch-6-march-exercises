@@ -1,9 +1,9 @@
 
-function sumFibs(number, prev = 0, current = 1, sum = 0) {
+function sumFibs(number, prev = 0, current = 1, sum = 1) {
   const prevVal = current;
   const currentVal = prev + current;
   if (currentVal > number) {
-    return sum + 1;
+    return sum;
   }
   if (currentVal % 2 !== 0) {
     const newSum = sum + currentVal;
