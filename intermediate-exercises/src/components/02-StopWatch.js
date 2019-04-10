@@ -29,6 +29,8 @@ class StopWatch extends PureComponent {
     this.handleInterval = this.handleInterval.bind(this);
     this.toggleTimerState = this.toggleTimerState.bind(this);
     this.clearTimer = this.clearTimer.bind(this);
+
+    this.intervalId = null;
   }
   componentDidUpdate(prevProps, prevState) {
     if (prevState.timerRunning !== this.state.timerRunning) {
@@ -36,14 +38,13 @@ class StopWatch extends PureComponent {
     }
   }
   handleInterval(timerRunningState) {
-    let interval;
     if (timerRunningState) {
       const that = this;
-      interval = setInterval(() => {
+      this.intervalId = setInterval(() => {
         that.setState({ currentMilliseconds: that.state.currentMilliseconds + 1 });
       }, 1);
     } else {
-      clearInterval(interval);
+      clearInterval(this.intervalId);
     }
   }
   toggleTimerState() {
@@ -57,11 +58,11 @@ class StopWatch extends PureComponent {
     const buttonText = timerRunning === true ? 'Stop' : 'Start';
     return (
       <div>
-        <h3>{currentMilliseconds}</h3>
+        <h3>{currentMilliseconds} ms</h3>
         <br />
         <button onClick={this.toggleTimerState}>{buttonText}</button>
         <br />
-        <button>Clear</button>
+        <button onClick={this.clearTimer}>Clear</button>
       </div>
     );
   }
