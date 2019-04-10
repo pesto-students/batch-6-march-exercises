@@ -1,3 +1,5 @@
+/* eslint-disable react/prefer-stateless-function */
+/* eslint-disable react/no-multi-comp */
 /*
   Q1:
 
@@ -20,37 +22,78 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class RadioGroup extends React.Component {
-  static propTypes = {
-    // defaultValue: PropTypes.string,                UN-COMMENT THIS LINE
-    children: PropTypes.shape().isRequired,
-  };
-  render() {
-    return (
-      <div>{this.props.children}</div>
-    );
+  constructor(props) {
+    super(props);
+    this.state = { selectedValue: props.defaultValue };
+
+    this.onSelect = this.onSelect.bind(this);
   }
-}
-
-class RadioOption extends React.Component {
-  static propTypes = {
-    // value: PropTypes.string,                       UN-COMMENT THIS LINE
-    children: PropTypes.shape().isRequired,
-  };
-
+  onSelect(newValue) {
+    this.setState({ selectedValue: newValue });
+  }
   render() {
+    const { selectedValue } = this.state;
+    const { children } = this.props;
     return (
       <div>
-        <RadioIcon isSelected={false} /> {this.props.children}
+        { React.Children.map(children, child =>
+            React.cloneElement(child, {
+              selected: selectedValue === child.props.value,
+              onSelect: this.onSelect,
+            }))
+        }
       </div>
     );
   }
 }
 
-class RadioIcon extends React.Component {
-  static propTypes = {
-    isSelected: PropTypes.bool.isRequired,
-  };
+RadioGroup.propTypes = {
+  defaultValue: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+};
 
+class RadioOption extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.handleClick = this.handleClick.bind(this);
+    this.handleKeyPres = this.handleKeyPres.bind(this);
+  }
+  handleClick() {
+    const { value, onSelect } = this.props;
+    onSelect(value);
+  }
+  handleKeyPres(event) {
+    const { value, onSelect } = this.props;
+    if (event.keyCode === 13 || event.keyCode === 32) {
+      onSelect(value);
+    }
+  }
+  render() {
+    const { selected } = this.props;
+    return (
+      <div
+        onKeyDown={this.handleKeyPres}
+        onClick={this.handleClick}
+        role="button"
+        tabIndex="0"
+      >
+        <RadioIcon isSelected={selected} /> {this.props.children}
+      </div>
+    );
+  }
+}
+RadioOption.propTypes = {
+  value: PropTypes.string.isRequired,
+  selected: PropTypes.bool,
+  children: PropTypes.string.isRequired,
+  onSelect: PropTypes.func,
+};
+RadioOption.defaultProps = {
+  selected: false,
+  onSelect: () => {},
+};
+class RadioIcon extends React.Component {
   render() {
     return (
       <div
@@ -68,6 +111,10 @@ class RadioIcon extends React.Component {
     );
   }
 }
+
+RadioIcon.propTypes = {
+  isSelected: PropTypes.bool.isRequired,
+};
 
 class CompoundComponents extends React.Component {
   render() {
