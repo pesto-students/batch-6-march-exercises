@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 /*
 * Exercise 2:
@@ -17,10 +17,53 @@ import React, { Component } from 'react';
 *  Clicking Clear will stop the timer if it's running and reset the lapsed time to 0.
 */
 
-class StopWatch extends Component {
+const initialState = {
+  currentMilliseconds: 0,
+  timerRunning: false,
+};
+class StopWatch extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = Object.assign({}, initialState);
+
+    this.handleInterval = this.handleInterval.bind(this);
+    this.toggleTimerState = this.toggleTimerState.bind(this);
+    this.clearTimer = this.clearTimer.bind(this);
+
+    this.intervalId = null;
+  }
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.timerRunning !== this.state.timerRunning) {
+      this.handleInterval(this.state.timerRunning);
+    }
+  }
+  handleInterval(timerRunningState) {
+    if (timerRunningState) {
+      const that = this;
+      this.intervalId = setInterval(() => {
+        that.setState({ currentMilliseconds: that.state.currentMilliseconds + 1 });
+      }, 1);
+    } else {
+      clearInterval(this.intervalId);
+    }
+  }
+  toggleTimerState() {
+    this.setState({ timerRunning: !this.state.timerRunning });
+  }
+  clearTimer() {
+    this.setState(Object.assign({}, initialState));
+  }
   render() {
+    const { currentMilliseconds, timerRunning } = this.state;
+    const buttonText = timerRunning === true ? 'Stop' : 'Start';
     return (
-      <div>Stop Watch</div>
+      <div>
+        <h3>{currentMilliseconds} ms</h3>
+        <br />
+        <button onClick={this.toggleTimerState}>{buttonText}</button>
+        <br />
+        <button onClick={this.clearTimer}>Clear</button>
+      </div>
     );
   }
 }
