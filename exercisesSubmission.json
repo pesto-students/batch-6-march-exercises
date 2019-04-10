@@ -9,7 +9,7 @@
             "completed": true
         },
         "request-validator": {
-            "completed": false
+            "completed": true
         },
         "memoize": {
             "completed": true
@@ -18,7 +18,7 @@
             "completed": true
         },
         "account-dataset": {
-            "completed": false
+            "completed": true
         },
         "alternating-characters": {
             "completed": true
