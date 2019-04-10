@@ -21,26 +21,57 @@ import PropTypes from 'prop-types';
 
 class RadioGroup extends React.Component {
   static propTypes = {
-    // defaultValue: PropTypes.string,                UN-COMMENT THIS LINE
+    defaultValue: PropTypes.string,
     children: PropTypes.shape().isRequired,
   };
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      selected: this.props.defaultValue,
+    }
+    this.optionClicked = this.optionClicked.bind(this);
+  }
+
+  optionClicked(value) {
+    this.setState({ selected: value });
+  }
+
+
   render() {
     return (
-      <div>{this.props.children}</div>
+      <div tabindex="0">
+      {
+        React.Children.map(this.props.children, child => {
+        const isSelected = this.state.selected === child.props.value;
+        return React.cloneElement(child, { isSelected, optionClicked: this.optionClicked, tabindex:'-1' });
+      })
+      }
+      </div>
     );
   }
 }
 
 class RadioOption extends React.Component {
   static propTypes = {
-    // value: PropTypes.string,                       UN-COMMENT THIS LINE
+    value: PropTypes.string,
+    isSelected: PropTypes.bool,
     children: PropTypes.shape().isRequired,
   };
 
+  optionChanged = () => this.props.optionClicked(this.props.value);
+
+  handleKeyPress = (event) => {
+    const charCode = event.charCode
+    if (charCode === 13 || charCode === 32) {
+      this.optionChanged();
+    }
+  }
+
   render() {
     return (
-      <div>
-        <RadioIcon isSelected={false} /> {this.props.children}
+      <div onClick={this.optionChanged} onKeyPress={this.handleKeyPress}>
+        <RadioIcon isSelected={this.props.isSelected} /> {this.props.children}
       </div>
     );
   }
