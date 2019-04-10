@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
-// import axios from 'axios';
+import PropTypes from 'prop-types';
+import axios from 'axios';
 
 /**
  * Axios is a promise based HTTP client for the browser and node.js.
@@ -21,9 +21,17 @@ import React, { Component } from 'react';
  */
 /* eslint-disable react/no-unused-state */
 const GithubRepos = ({ repos }) => {
+  const repoList = repos.map((repo) => {
+    return (
+      <li>
+        <h5>{repo.name}</h5>
+        <p>Last Update At: {repo.updated_at}</p>
+      </li>
+    )
+  })
   return (
     <ul>
-      {/* Task: The list of repos here */}
+      {repoList}
     </ul>
   );
 }
@@ -43,16 +51,33 @@ class UsernameForm extends Component {
       username: '',
       repos: [],
     };
+    this.updateUserName = this.updateUserName.bind(this);
+    this.getRepos = this.getRepos.bind(this);
   }
+
+  updateUserName(event){
+    event.preventDefault();
+    this.setState({
+      username: event.target.value
+    });
+  }
+
+  getRepos(){
+    axios.get(`https://api.github.com/users/${this.state.username}/repos`)
+      .then(console.log)
+  }
+
   render() {
     return (
       <div>
         <input
           type="text"
           name="username"
+          value = {this.state.username}
+          onChange = {this.updateUserName}
         />
         <button
-          onClick={() => {}}
+          onClick={this.getRepos}
         >
           Get Repos
         </button>
