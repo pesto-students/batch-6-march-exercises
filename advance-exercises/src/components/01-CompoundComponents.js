@@ -20,27 +20,41 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class RadioGroup extends React.Component {
+  constructor(props){
+    this.state = {
+      value: props.defaultValue
+    }
+  }
   static propTypes = {
-    // defaultValue: PropTypes.string,                UN-COMMENT THIS LINE
+    defaultValue: PropTypes.string,
     children: PropTypes.shape().isRequired,
   };
+  isClicked(value){
+    this.setState({
+      value: value
+    })
+  }
   render() {
     return (
-      <div>{this.props.children}</div>
-    );
+      <div>{this.props.children(this.isClicked, this.state.currentValue)}</div>
+    )
   }
 }
 
 class RadioOption extends React.Component {
+  constructor(props){
+    this.state = {
+      isSelected: props.value === props.selectedValue ? true : false
+    }
+  }
   static propTypes = {
-    // value: PropTypes.string,                       UN-COMMENT THIS LINE
+    value: PropTypes.string,
     children: PropTypes.shape().isRequired,
   };
-
   render() {
     return (
       <div>
-        <RadioIcon isSelected={false} /> {this.props.children}
+        <RadioIcon onClick={this.props.isClicked(this.props.value)} isSelected={false} />{this.props.children}
       </div>
     );
   }
@@ -74,7 +88,6 @@ class CompoundComponents extends React.Component {
     return (
       <div>
         <h1>♬ It is about time that we all turned off the radio ♫</h1>
-
         <RadioGroup defaultValue="fm">
           <RadioOption value="am">AM</RadioOption>
           <RadioOption value="fm">FM</RadioOption>
