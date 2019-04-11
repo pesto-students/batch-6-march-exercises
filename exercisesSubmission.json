@@ -6,7 +6,7 @@
             "completed": true
         },
         "all-promises": {
-            "completed": false
+            "completed": true
         },
         "greet": {
             "completed": true
@@ -21,7 +21,7 @@
             "completed": true
         },
         "sequential-promise": {
-            "completed": false
+            "completed": true
         },
         "timeout": {
             "completed": true
@@ -30,10 +30,10 @@
             "completed": true
         },
         "promise-all-props": {
-            "completed": false
+            "completed": true
         },
         "sleep-promise": {
-            "completed": false
+            "completed": true
         }
     }
 }

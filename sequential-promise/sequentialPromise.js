@@ -1,8 +1,5 @@
-
-function sequentialPromise(...args) {
-  return args;
+function sequentialPromise(promises) {
+  return promises.reduce((acc, promiseFn) => acc.then(promiseFn), Promise.resolve());
 }
 
-export {
-  sequentialPromise,
-};
+export { sequentialPromise };
