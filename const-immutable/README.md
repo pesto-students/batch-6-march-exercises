@@ -11,6 +11,9 @@ function constImmutable() {
     username: 'pesto',
     password: 'initialPassword',
   };
+  Object.defineProperty(account, 'password', {
+    writable: false
+  });
   account.password = 's3cret';
   return account.password;
 }
