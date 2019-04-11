@@ -1,6 +1,6 @@
 
 function isPromise(promise) {
-  return promise instanceof Promise;
+  return Promise.resolve(promise) === promise;
 }
 
 export {
