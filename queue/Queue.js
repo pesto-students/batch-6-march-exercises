@@ -1,19 +1,37 @@
 
 class Queue {
   constructor() {
-    this.queue = [];
+    this.linkedList = [];
   }
 
   enqueue(item) {
-    this.queue.push(item);
+    this.linkedList.push(item);
   }
 
-  toString() {
-    // let queue = this.queue;
-    // if (stringifier) {
-    //   queue = this.queue.map(stringifier);
-    // }
-    return this.queue.join(',');
+  toString(stringifier) {
+    let list = this.linkedList;
+    if (stringifier) {
+      list = this.linkedList.map(cur => stringifier(cur));
+    }
+    return list.join(',');
+  }
+
+  dequeue() {
+    if (this.isEmpty()) {
+      return null;
+    }
+    return this.linkedList.shift();
+  }
+
+  isEmpty() {
+    return this.linkedList.length === 0;
+  }
+
+  peek() {
+    if (this.isEmpty()) {
+      return null;
+    }
+    return this.linkedList[0];
   }
 }
 
