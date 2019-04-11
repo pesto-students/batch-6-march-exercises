@@ -33,17 +33,17 @@ class App extends Component {
   }
 
   render() {
-    const { colors }= this.state;
+    const { colors } = this.state;
 
     return (
       <Fragment>
-        <Router>          
+        <Router>
           <Switch>
-            <Route exact path="/colors" render={() => <ColorList colors={colors} /> } />
+            <Route exact path="/colors" render={() => <ColorList colors={colors} />} />
             {colors.map(color => (
-              <Route key={color.hex} exact path={`/colors/${color.name}`} render={() => <Color color={color} /> } />
+              <Route key={color.hex} exact path={`/colors/${color.name}`} render={() => <Color color={color} />} />
             ))}
-            <Route exact path="/colors/new" render={(props) => <NewColor addColor={this.handleAdd} colors={colors} {...props} /> } />
+            <Route exact path="/colors/new" render={props => <NewColor addColor={this.handleAdd} colors={colors} {...props} />} />
             <Redirect to="/colors" />
           </Switch>
         </Router>
