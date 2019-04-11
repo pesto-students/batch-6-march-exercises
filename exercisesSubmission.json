@@ -21,16 +21,16 @@
             "completed": true
         },
         "round-to": {
-            "completed": false
+            "completed": true
         },
         "time-was": {
-            "completed": false
+            "completed": true
         },
         "abbreviate-string": {
             "completed": true
         },
         "add-big-integers": {
-            "completed": false
+            "completed": true
         },
         "alien-alphabet": {
             "completed": false
@@ -39,7 +39,7 @@
             "completed": false
         },
         "throw-errors": {
-            "completed": false
+            "completed": true
         }
     }
 }

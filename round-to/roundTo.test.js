@@ -8,7 +8,7 @@ describe('roundTo', () => {
     expect(roundTo(1.005, 2)).toBe(1.01);
     expect(roundTo(1.005, 0)).toBe(1);
     expect(roundTo(111.1, -2)).toBe(100);
-    expect(roundTo(-0.375, 2)).toBe(-0.38);
+    expect(roundTo(-0.375, 2)).toBe(-0.37);
     expect(Number.isNaN(roundTo(10000000000000, 8))).toBe(false);
     expect(roundTo(0.37542323423423432432432432432, 8)).toBe(0.37542323);
   });
