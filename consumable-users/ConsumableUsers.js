@@ -1,22 +1,22 @@
 
-function ConsumableUsers() {
-  const users = ['Alice', 'Bob'];
+class ConsumableUsers {
+  constructor() {
+    this.users = ['Alice', 'Bob'];
+    this.completed = false;
+  }
 
-  return {
-    [Symbol.iterator]() {
-      return this;
-    },
+  nextUser() {
+    const user = this.users.shift();
+    if (!user) {
+      this.completed = true;
+      return undefined;
+    }
+    return `user: ${user}`;
+  }
 
-    next() {
-      if (users.length <= 0) {
-        return { done: true };
-      }
-      return {
-        value: `user: ${users[0]}`,
-        done: false,
-      };
-    },
-  };
+  done() {
+    return this.completed;
+  }
 }
 
 export {
