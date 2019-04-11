@@ -9,13 +9,13 @@
             "completed": true
         },
         "const-immutable": {
-            "completed": false
+            "completed": true
         },
         "create-student": {
             "completed": true
         },
         "double-odd-numbers": {
-            "completed": false
+            "completed": true
         },
         "instructor": {
             "completed": true
@@ -24,28 +24,28 @@
             "completed": true
         },
         "map-filter-and-reduce": {
-            "completed": false
+            "completed": true
         },
         "place-in-middle": {
-            "completed": false
+            "completed": true
         },
         "print-full-name": {
             "completed": true
         },
         "sum-even-args": {
-            "completed": false
+            "completed": true
         },
         "template-literals": {
-            "completed": false
+            "completed": true
         },
         "template-tag-function": {
-            "completed": false
+            "completed": true
         },
         "triple-and-filter": {
-            "completed": false
+            "completed": true
         },
         "all-of-conditions": {
-            "completed": false
+            "completed": true
         }
     }
 }

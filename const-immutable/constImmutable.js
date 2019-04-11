@@ -6,9 +6,15 @@ function constImmutable() {
   };
   Object.defineProperty(account, 'password', {
     writable: false,
+    enumerable: false,
+    configurable: false,
   });
+  try {
+    account.password = 's3cret';
+  } catch (e) {
+    // const errorName = e.name;
+  }
 
-  account.password = 's3cret';
   return account.password;
 }
 
