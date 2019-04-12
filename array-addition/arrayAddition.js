@@ -12,6 +12,7 @@ function arrayAddition(firstArray, secondArray) {
   if (isError) {
     throw new TypeError('Both arguments should be of type Array.');
   }
+
   verifyAllNumbers(firstArray);
   verifyAllNumbers(secondArray);
   const result = firstArray.map((number, index) => {
@@ -21,7 +22,7 @@ function arrayAddition(firstArray, secondArray) {
   if (firstArray.length < secondArray.length) {
     return result.concat(secondArray.slice(firstArray.length));
   }
-  return secondArray;
+  return result;
 }
 
 export {
