@@ -1,5 +1,5 @@
 
-function* rangeIter(start, end) {
+function rangeIter(start, end) {
   if (typeof start !== 'number') {
     throw new TypeError(`${start} is not a number`);
   }
@@ -9,11 +9,20 @@ function* rangeIter(start, end) {
   if (start > end) {
     return [];
   }
-  let current = start;
-  while (current <= end) {
-    yield current;
-    current += 1;
-  }
+  let current = start - 1;
+  return {
+    [Symbol.iterator]() {
+      return this;
+    },
+
+    next() {
+      current += 1;
+      if (current <= end) {
+        return { value: current, done: false };
+      }
+      return { value: undefined, done: true };
+    },
+  };
 }
 
 export {
