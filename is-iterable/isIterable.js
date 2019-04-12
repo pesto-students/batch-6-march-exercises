@@ -1,6 +1,6 @@
 
-function isIterable(...args) {
-  return args;
+function isIterable(argument) {
+  return (typeof argument[Symbol.iterator] !== 'undefined');
 }
 
 export {
