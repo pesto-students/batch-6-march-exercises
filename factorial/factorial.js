@@ -1,14 +1,19 @@
-function factorial(number) {
-  if (number === 0 || number === 1) {
+const memoize = (fn) => {
+  const cache = {};
+  return (number) => {
+    if (Object.hasOwnProperty.call(cache, number)) {
+      return cache[number];
+    }
+    cache[number] = fn(number);
+    return cache[number];
+  };
+};
+
+const factorial = memoize((x) => {
+  if (x === 1 || x === 0) {
     return 1;
   }
-  let result = 1;
-  let initialNumber = 1;
-  while (initialNumber <= number) {
-    result *= initialNumber;
-    initialNumber += 1;
-  }
-  return result;
-}
+  return x * factorial(x - 1);
+});
 
 export { factorial };
