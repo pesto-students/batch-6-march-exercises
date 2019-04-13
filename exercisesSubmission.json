@@ -6,7 +6,7 @@
             "completed": true
         },
         "days-in-month": {
-            "completed": false
+            "completed": true
         },
         "json-parse": {
             "completed": true
@@ -24,13 +24,13 @@
             "completed": false
         },
         "time-was": {
-            "completed": false
+            "completed": true
         },
         "abbreviate-string": {
             "completed": true
         },
         "add-big-integers": {
-            "completed": false
+            "completed": true
         },
         "alien-alphabet": {
             "completed": false
@@ -39,7 +39,7 @@
             "completed": false
         },
         "throw-errors": {
-            "completed": false
+            "completed": true
         }
     }
 }
