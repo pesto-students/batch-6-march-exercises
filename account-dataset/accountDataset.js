@@ -2,8 +2,8 @@ const accounts = require('./dataset.json');
 
 function addInterest(balance = 0, state) {
   const amount = parseFloat(state.amount);
-  const interest = 18.9 / 100;
-  return balance + (amount * interest);
+  const interest = 0.189;
+  return parseFloat((balance + (amount * interest)).toFixed(2));
 }
 
 function hundredThousandairs() {
@@ -26,14 +26,24 @@ function sumOfBankBalances() {
 
 function sumOfInterests() {
   const states = ['WI', 'IL', 'WY', 'OH', 'GA', 'DE'];
-  const selectedStates = accounts.bankBalances.filter(account => states.indexOf(account.state) > -1);
+  const isInStates = account => states.indexOf(account.state) > -1;
+  const selectedStates = accounts.bankBalances.filter(isInStates);
   const balanceWithInterest = selectedStates.reduce(addInterest, 0);
-  return parseFloat(balanceWithInterest.toFixed(2)) + 0.02;
+  return parseFloat(balanceWithInterest);
 }
 
-function higherStateSums(){
-  const stateSums = accounts.bankBalances.reduce((acc, elm) => )
-
+function higherStateSums() {
+  const oneMillion = 1000000;
+  const stateSum = accounts.bankBalances.reduce((acc, el) => {
+    if (!acc[el.state]) {
+      acc[el.state] = parseFloat(el.amount);
+      return acc;
+    }
+    acc[el.state] += parseFloat(el.amount);
+    return acc;
+  }, {});
+  const richStates = Object.keys(stateSum).filter(state => stateSum[state] > oneMillion);
+  return richStates.reduce((acc, el) => acc + stateSum[el], 0);
 }
 
 export {
@@ -41,4 +51,5 @@ export {
   datasetWithRoundedDollar,
   sumOfBankBalances,
   sumOfInterests,
+  higherStateSums,
 };
