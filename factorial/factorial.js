@@ -1,7 +1,7 @@
 const memoize = (fn) => {
   const cache = {};
   return (number) => {
-    if (Object.hasOwnProperty.call(cache, number)) {
+    if (Object.prototype.hasOwnProperty.call(cache, number)) {
       return cache[number];
     }
     cache[number] = fn(number);
