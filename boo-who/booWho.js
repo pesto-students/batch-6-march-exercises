@@ -1,8 +1,5 @@
-
-function booWho(...args) {
-  return args;
+function booWho(arg) {
+  return typeof arg === 'boolean';
 }
 
-export {
-  booWho,
-};
+export { booWho };
