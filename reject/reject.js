@@ -1,6 +1,6 @@
 
-function reject(...args) {
-  return args;
+function reject(fn, array) {
+  return array.filter(item => !fn(item));
 }
 
 export {
