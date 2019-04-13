@@ -1,14 +1,12 @@
+/* eslint-disable prefer-const */
 function sumAll([firstNumber, secondNumber]) {
-  let min;
-  let max;
   let sum = 0;
-  if (firstNumber > secondNumber) {
-    min = secondNumber;
-    max = firstNumber;
-  } else {
-    min = firstNumber;
-    max = secondNumber;
-  }
+
+  // prettier-ignore
+  let [min, max] = firstNumber < secondNumber
+    ? [firstNumber, secondNumber]
+    : [secondNumber, firstNumber];
+
   while (min <= max) {
     sum += min;
     min += 1;
