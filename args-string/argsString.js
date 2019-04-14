@@ -1,6 +1,6 @@
 
-function argsString(...args) {
-  return args;
+function argsString(sentence, words) {
+  return words.reduce((acc, cur) => acc.replace('{}', cur), sentence);
 }
 
 export {
