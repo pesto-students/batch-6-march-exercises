@@ -3,18 +3,7 @@ import { ConsumableUsers } from './ConsumableUsers';
 describe('Iterator usages', () => {
   let usersIterable;
   beforeEach(() => {
-    const consumableUsers = new ConsumableUsers();
-
-    function iteratorFunction() {
-      return {
-        next: () => ({
-          value: consumableUsers.nextUser,
-          done: consumableUsers.done,
-        }),
-      };
-    }
-
-    usersIterable = {};
+    usersIterable = new ConsumableUsers();
   });
 
   describe('create an iterator/iterable', () => {
@@ -38,7 +27,7 @@ describe('Iterator usages', () => {
     describe('using the iterator', () => {
       let iterator;
       beforeEach(() => {
-        iterator = usersIterable[Symbol.iterator];
+        iterator = usersIterable[Symbol.iterator]();
       });
 
       it('should return `Alice` as first user', () => {
@@ -50,6 +39,7 @@ describe('Iterator usages', () => {
       });
 
       it('should return `Bob` as second user', () => {
+        iterator.next();
         const secondItem = iterator.next();
         expect(secondItem).toEqual({
           value: 'user: Bob',
@@ -59,7 +49,7 @@ describe('Iterator usages', () => {
 
       it('should return `done:true`, which means there are no more items', () => {
         iterator.next();
-        iterator.xyz();
+        iterator.next();
         const beyondLast = iterator.next();
         expect(beyondLast).toEqual({
           value: undefined,
@@ -70,25 +60,25 @@ describe('Iterator usages', () => {
 
     describe('using built-in constructs', () => {
       it('use `Array.from()` to convert the iterable to an array (which is also iterable)', () => {
-        const users = usersIterable;
+        const users = Array.from(usersIterable, x => x);
         expect(users).toEqual(['user: Alice', 'user: Bob']);
       });
 
       it('use for-of to loop over an iterable', () => {
         const users = [];
+        for (const val of usersIterable) {
+          users.push(val);
+        }
         expect(users).toEqual(['user: Alice', 'user: Bob']);
       });
 
       it('use the spread-operator to convert/add iterable to an array', () => {
-        const users = [];
+        const users = ['noname', ...usersIterable];
         expect(users).toEqual(['noname', 'user: Alice', 'user: Bob']);
       });
 
       it('de-structure an iterable like an array', () => {
-        const {
-          firstUser,
-          secondUser,
-        } = usersIterable;
+        const [firstUser, secondUser] = usersIterable;
         expect(firstUser).toBe('user: Alice');
         expect(secondUser).toBe('user: Bob');
       });
