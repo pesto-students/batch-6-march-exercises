@@ -3,28 +3,28 @@
     "segmentName": "segment-2",
     "exercises": {
         "built-in-iterables": {
-            "completed": false
+            "completed": true
         },
         "ackermann": {
             "completed": true
         },
         "aperture": {
-            "completed": false
+            "completed": true
         },
         "animal-sort": {
-            "completed": false
+            "completed": true
         },
         "args-string": {
-            "completed": false
+            "completed": true
         },
         "arithmetic-expression-evaluator": {
-            "completed": false
+            "completed": true
         },
         "array-addition": {
-            "completed": false
+            "completed": true
         },
         "array-cube-root-to-json": {
-            "completed": false
+            "completed": true
         },
         "object-assign": {
             "completed": true
