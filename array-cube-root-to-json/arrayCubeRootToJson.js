@@ -1,15 +1,21 @@
 const castToNumber = value => parseInt(value, 10);
 
 function verifyAllNumbers(numbers) {
+  const isOfTypeNum = number => typeof number !== 'number';
+  const convertsToNaN = number => Number.isNaN(castToNumber(number));
   for (const number of numbers) {
-    if (Number.isNaN(castToNumber(number))) {
-      throw new TypeError('Array must contain only numbers');
+    if (isOfTypeNum(number) && convertsToNaN(number)) {
+      return false;
     }
   }
+  return true;
 }
 
 function arrayCubeRootToJson(numbers) {
-  verifyAllNumbers(numbers);
+  if (!verifyAllNumbers(numbers)) {
+    throw new TypeError('All elements must be of type number');
+  }
+
   const numberCubes = {};
   for (const number of numbers) {
     numberCubes[number] = Math.cbrt(number);
