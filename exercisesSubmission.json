@@ -9,10 +9,10 @@
             "completed": false
         },
         "fibonacci-iter": {
-            "completed": false
+            "completed": true
         },
         "generator-iterable": {
-            "completed": false
+            "completed": true
         },
         "iterable-protocol": {
             "completed": false
