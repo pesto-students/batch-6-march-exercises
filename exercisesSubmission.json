@@ -15,19 +15,19 @@
             "completed": true
         },
         "iterable-protocol": {
-            "completed": false
+            "completed": true
         },
         "is-iterable": {
             "completed": true
         },
         "is-iterable-empty": {
-            "completed": false
+            "completed": true
         },
         "range-iter": {
-            "completed": false
+            "completed": true
         },
         "simple-iterable": {
-            "completed": false
+            "completed": true
         }
     }
 }

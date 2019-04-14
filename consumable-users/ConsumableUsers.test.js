@@ -25,10 +25,10 @@ describe('Iterator usages', () => {
 
   describe('fill the iterable with content using `ConsumableUsers`', () => {
     describe('using the iterator', () => {
-      const iterator = usersIterable[Symbol.iterator]();
-      // beforeEach(() => {
-      //   iterator = usersIterable[Symbol.iterator]();
-      // });
+      let iterator;
+      beforeEach(() => {
+        iterator = usersIterable[Symbol.iterator]();
+      });
 
       it('should return `Alice` as first user', () => {
         const firstItem = iterator.next();
@@ -39,6 +39,7 @@ describe('Iterator usages', () => {
       });
 
       it('should return `Bob` as second user', () => {
+        iterator.next();
         const secondItem = iterator.next();
         expect(secondItem).toEqual({
           value: 'user: Bob',
@@ -47,6 +48,7 @@ describe('Iterator usages', () => {
       });
 
       it('should return `done:true`, which means there are no more items', () => {
+        iterator.next();
         iterator.next();
         const beyondLast = iterator.next();
         expect(beyondLast).toEqual({
@@ -71,15 +73,12 @@ describe('Iterator usages', () => {
       });
 
       it('use the spread-operator to convert/add iterable to an array', () => {
-        const users = [];
+        const users = ['noname', ...usersIterable];
         expect(users).toEqual(['noname', 'user: Alice', 'user: Bob']);
       });
 
       it('de-structure an iterable like an array', () => {
-        const {
-          firstUser,
-          secondUser,
-        } = usersIterable;
+        const [firstUser, secondUser] = usersIterable;
         expect(firstUser).toBe('user: Alice');
         expect(secondUser).toBe('user: Bob');
       });
