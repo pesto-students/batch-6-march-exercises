@@ -3,7 +3,7 @@
     "segmentName": "segment-1",
     "exercises": {
         "bind": {
-            "completed": false
+            "completed": true
         },
         "block-scoping": {
             "completed": true
@@ -18,7 +18,7 @@
             "completed": true
         },
         "instructor": {
-            "completed": false
+            "completed": true
         },
         "join-arrays": {
             "completed": true
@@ -27,25 +27,25 @@
             "completed": true
         },
         "place-in-middle": {
-            "completed": false
+            "completed": true
         },
         "print-full-name": {
             "completed": true
         },
         "sum-even-args": {
-            "completed": false
+            "completed": true
         },
         "template-literals": {
-            "completed": false
+            "completed": true
         },
         "template-tag-function": {
-            "completed": false
+            "completed": true
         },
         "triple-and-filter": {
-            "completed": false
+            "completed": true
         },
         "all-of-conditions": {
-            "completed": false
+            "completed": true
         }
     }
 }
