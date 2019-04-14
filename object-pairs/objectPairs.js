@@ -1,8 +1,8 @@
-
-function objectPairs(...args) {
-  return args;
+function objectPairs(obj) {
+  return Object.keys(obj).reduce((accumulator, key) => {
+    accumulator.push([key, obj[key]]);
+    return accumulator;
+  }, []);
 }
 
-export {
-  objectPairs,
-};
+export { objectPairs };

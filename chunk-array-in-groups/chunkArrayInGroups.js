@@ -1,8 +1,9 @@
-
-function chunkArrayInGroups(...args) {
-  return args;
+function chunkArrayInGroups(arr, chunkSize) {
+  let chunkedArray = [];
+  for (let index = 0; index < arr.length; index += chunkSize) {
+    chunkedArray = chunkedArray.concat([arr.slice(index, index + chunkSize)]);
+  }
+  return chunkedArray;
 }
-
-export {
-  chunkArrayInGroups,
-};
+// console.log(chunkArrayInGroups(['a', 'b', 'c', 'd'], 2));
+export { chunkArrayInGroups };
