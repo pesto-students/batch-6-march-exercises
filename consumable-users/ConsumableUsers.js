@@ -1,8 +1,21 @@
+class ConsumableUsers {
+  constructor() {
+    this.users = ['Alice', 'Bob'];
+    this.done = false;
+  }
 
-function consumableUsers(...args) {
-  return args;
+  nextUser() {
+    const user = this.users.shift();
+    if (!user) {
+      this.done = true;
+      return undefined;
+    }
+    return `user: ${user}`;
+  }
+
+  isDone() {
+    return this.done;
+  }
 }
 
-export {
-  consumableUsers,
-};
+export { ConsumableUsers };
