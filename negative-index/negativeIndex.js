@@ -1,28 +1,35 @@
+const isPositiveInteger = num => Number.isInteger(num) && num >= 0;
+const isNegativeInteger = num => Number.isInteger(num) && num < 0;
 
-function negativeIndex(array1) {
-  if (!Array.isArray(array1)) {
+function negativeIndex(array) {
+  if (!Array.isArray(array)) {
     throw new TypeError('Only arrays are supported');
   }
 
-  const getPositiveIndex = (arrLen, idx) => Number(arrLen) + Number(idx);
-
   const handler = {
-    get(target, index) {
-      if (index < 0) {
-        return target[getPositiveIndex(target.length, index)];
+    get(target, prop) {
+      const key = +prop;
+      if (isPositiveInteger(key)) {
+        return Reflect.get(target, key);
       }
-      return target[index];
+      if (isNegativeInteger(key)) {
+        return Reflect.get(target, target.length + key);
+      }
+      return Reflect.get(target, prop);
     },
-    set(target, index, value) {
-      let targetindex = index;
-      if (index < 0) {
-        targetindex = getPositiveIndex(target.length, index);
+
+    set(target, prop, value) {
+      const key = +prop;
+      if (isPositiveInteger(key)) {
+        return Reflect.set(target, key, value);
       }
-      target[targetindex] = value;
-      return true;
+      if (isNegativeInteger(key)) {
+        return Reflect.set(target, target.length + key, value);
+      }
+      return Reflect.set(target, prop, value);
     },
   };
-  return new Proxy(array1, handler);
+  return new Proxy(array, handler);
 }
 
 export {

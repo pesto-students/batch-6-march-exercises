@@ -2,10 +2,10 @@
 function knownProp(object) {
   const handler = {
     get(target, key) {
-      if (!(key in target)) {
+      if (!target.hasOwnProperty(key)) { // eslint-disable-line no-prototype-builtins
         throw new TypeError(`Unknown property ${key}`);
       }
-      return target[key];
+      return Reflect.get(target, key);
     },
   };
   return new Proxy(object, handler);
