@@ -9,3 +9,7 @@ window.setInterval(() => {
   }
 }, 200);
 
+const formData = new FormData();
+
+const utf8_value = document.querySelector('input[name=utf8]').value;
+formData.append('utf8', utf8_value);
