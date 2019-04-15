@@ -3,7 +3,7 @@
     "segmentName": "segment-1",
     "exercises": {
         "on-change": {
-            "completed": false
+            "completed": true
         },
         "proxy-iterable": {
             "completed": false
@@ -15,10 +15,10 @@
             "completed": false
         },
         "set-default-property": {
-            "completed": false
+            "completed": true
         },
         "private-props": {
-            "completed": false
+            "completed": true
         },
         "xprod": {
             "completed": false
@@ -27,10 +27,10 @@
             "completed": false
         },
         "values-in": {
-            "completed": false
+            "completed": true
         },
         "values": {
-            "completed": false
+            "completed": true
         }
     }
 }

@@ -1,27 +1,34 @@
 
-function privateProps(obj, privacyFilter) {
-  const isPrivateProp = prop => typeof prop === 'string' && privacyFilter(prop);
+function privateProps(obj, _privacyFilter) {
+  const isPrivateProp = prop => typeof prop === 'string' && _privacyFilter(prop);
+  let privateConstraint = true;
   const handler = {
     get(target, prop) {
-      if (isPrivateProp(prop)) {
-        throw new TypeError(/Can't get property "${prop}"/);
-      } else {
+      if (prop === 'getPrivate') {
+        privateConstraint = false;
         return Reflect.get(target, prop);
       }
+      if (isPrivateProp(prop) && privateConstraint === true) {
+        throw new TypeError(`Can't get property ${prop}`);
+      }
+      privateConstraint = true;
+      return Reflect.get(target, prop);
     },
     set(target, prop) {
       if (isPrivateProp(prop)) {
         throw new TypeError(/Can't set property "${prop}"/);
-      } else {
-        return Reflect.set(target, prop);
       }
+      return Reflect.set(target, prop);
     },
     has(target, prop) {
-      return !isPrivateProp(prop);
+      if (isPrivateProp(prop)) {
+        return false;
+      }
+      return Reflect.has(target, prop);
     },
     ownKeys(target) {
       const keys = Reflect.ownKeys(target);
-      return keys.filter(key => !privacyFilter(key));
+      return keys.filter(key => !_privacyFilter(key));
     },
   };
 
