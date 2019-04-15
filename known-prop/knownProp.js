@@ -1,15 +1,13 @@
 function knownProp(obj) {
   const handler = {
-    get(target, name) {
-      if (name in target) {
-        return target[name];
+    get(target, property) {
+      if (Object.prototype.hasOwnProperty.call(target, property)) {
+        return Reflect.get(target, property);
       }
-      throw new TypeError('Unknown property');
+      throw TypeError('Unknown property');
     },
   };
-
-  const p = new Proxy(obj, handler);
-  return p;
+  return new Proxy(obj, handler);
 }
 // console.log(knownProp({ foo: true }));
 export { knownProp };
