@@ -15,18 +15,18 @@ describe('Cycled', () => {
     expect([c.next(), c.next(), c.next(), c.next()]).toEqual([2, 3, 1, 2]);
   });
 
-  test.skip('.previous()', () => {
+  test('.previous()', () => {
     const c = new Cycled(fixture);
     expect([c.previous(), c.previous(), c.previous(), c.previous()]).toEqual([3, 2, 1, 3]);
   });
 
-  test.skip('.step()', () => {
+  test('.step()', () => {
     const c = new Cycled(fixture);
     expect(c.step(2)).toBe(3);
     expect(c.step(-2)).toBe(1);
   });
 
-  test.skip('.index', () => {
+  test('.index', () => {
     const c = new Cycled(fixture);
     expect(c.index).toBe(0);
     c.index = 2;
@@ -37,22 +37,22 @@ describe('Cycled', () => {
     expect(c.current()).toBe(3);
   });
 
-  test.skip('.reversed()', () => {
+  test('.reversed()', () => {
     const c = new Cycled(fixture);
     expect(c.reversed().next().value).toBe(3);
   });
 
-  test.skip('.indexOf()', () => {
+  test('.indexOf()', () => {
     const c = new Cycled(fixture);
     expect(c.indexOf(3)).toBe(2);
   });
 
-  test.skip('iterable', () => {
+  test('iterable', () => {
     const c = new Cycled(fixture);
     expect(c[Symbol.iterator]().next().value).toBe(1);
   });
 
-  test.skip('iterations on destructuring', () => {
+  test('iterations on destructuring', () => {
     const c = new Cycled(fixture);
     expect([...c]).toEqual(fixture);
     expect([...c]).toEqual(fixture);

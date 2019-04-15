@@ -6,7 +6,7 @@
             "completed": true
         },
         "cycled": {
-            "completed": true
+            "completed": false
         },
         "fibonacci-iter": {
             "completed": true
