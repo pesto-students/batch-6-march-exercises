@@ -1,6 +1,6 @@
 
-function argsString(...args) {
-  return args;
+function argsString(string, array) {
+  return array.reduce((acc, word) => acc.replace(/\{\}/, word), string);
 }
 
 export {
