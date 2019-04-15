@@ -3,8 +3,10 @@ function arrayCubeRootToJson(array) {
   if (!Array.isArray(array)) {
     throw new Error();
   }
-  const invalidArray = array.filter(item => /\D/.test(item));
-  if (invalidArray.length > 0) {
+  const tests = str => /\d/.test(str) || str === Infinity;
+  const validElements = array.filter(tests);
+
+  if (validElements.length !== array.length) {
     throw new Error();
   }
 
