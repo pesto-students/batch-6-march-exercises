@@ -1,6 +1,6 @@
 
-function lastIndexOf(...args) {
-  return args;
+function lastIndexOf(item, array) {
+  return array.lastIndexOf(item);
 }
 
 export {
