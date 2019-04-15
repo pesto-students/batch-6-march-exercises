@@ -1,8 +1,13 @@
-
-function knownProp(...args) {
-  return args;
+function knownProp(obj) {
+  const handler = {
+    get(target, property) {
+      if (Object.prototype.hasOwnProperty.call(target, property)) {
+        return Reflect.get(target, property);
+      }
+      throw TypeError('Unknown property');
+    },
+  };
+  return new Proxy(obj, handler);
 }
-
-export {
-  knownProp,
-};
+// console.log(knownProp({ foo: true }));
+export { knownProp };
