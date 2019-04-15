@@ -2,6 +2,7 @@
 function uncurryN(number, curryFn) {
   const innerFunc = (...args) => {
     const curryFnLength = curryFn.length;
+
     if (args.length <= curryFnLength || number === 1) {
       return curryFn(...args);
     }
@@ -18,14 +19,6 @@ function uncurryN(number, curryFn) {
 
   return innerFunc;
 }
-
-
-// function a3(a) {
-//   return b => c => a + b + c;
-// }
-
-// const uncurried = uncurryN(3, a3);
-// console.log(uncurried(1, 2, 3));
 
 export {
   uncurryN,
