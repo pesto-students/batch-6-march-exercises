@@ -13,9 +13,10 @@ const checkForFile = (files, filePath, sync = false) => {
     const fileIndex = sortedFiles.length;
     const fileNameParts = fileName.split('.');
     fileNameParts[0] = `${fileNameParts[0]} (${fileIndex})`;
-    const newFileName = `${dir}/${fileNameParts[0]}`;
+    const newFileName = `${dir}/${fileNameParts.join('.')}`;
     const newFilePath = `${directory}/${fileNameParts.join('.')}`;
     if (sync) {
+      console.log(sync);
       fs.writeFileSync(newFilePath, 'hello', { encoding: 'utf8' });
       return newFileName;
     }
