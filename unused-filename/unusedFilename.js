@@ -12,12 +12,14 @@ const checkForFile = (files, filePath, sync = false) => {
     const sortedFiles = files.sort();
     const fileIndex = sortedFiles.length;
     const fileNameParts = fileName.split('.');
-    fileNameParts[0] = `${fileNameParts[0]}(${fileIndex})`;
-    const newFile = `${dir}/${fileNameParts.join('')}`;
+    fileNameParts[0] = `${fileNameParts[0]} (${fileIndex})`;
+    const newFileName = `${dir}/${fileNameParts[0]}`;
+    const newFilePath = `${directory}/${fileNameParts.join('.')}`;
     if (sync) {
-      return fs.writeFileSync(newFile, 'hello', { encoding: 'utf8' });
+      fs.writeFileSync(newFilePath, 'hello', { encoding: 'utf8' });
+      return newFileName;
     }
-    return fsPromises.writeFile(newFile).then(() => fileName);
+    return fsPromises.writeFile(newFilePath).then(() => newFileName);
   }
   return filePath;
 };
