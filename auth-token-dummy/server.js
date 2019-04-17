@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 const secret = 'mySecret';
 
 const app = express();
-const PORT = 3000;
+const PORT = 8000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -32,7 +32,7 @@ function verifyToken(req, res, next) {
   const token = req.header('x-auth');
   jwt.verify(token, secret, (err, decoded) => {
     if (err) {
-      return res.send('Invalid Token');
+      return res.send('Not Authenticated');
     }
     req.token = decoded;
     return next();
