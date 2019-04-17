@@ -1,7 +1,7 @@
 import path from 'path';
 import { csvToJson } from './csvToJson';
 
-const csvFile = path.resolve('avengers.csv');
+const csvFile = path.resolve('csv-to-json/avengers.csv');
 
 const fixture = [{
   name: 'Steve Rogers',
