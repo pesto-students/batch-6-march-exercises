@@ -3,7 +3,7 @@
     "segmentName": "segment-2",
     "exercises": {
         "express-middlewares": {
-            "completed": false
+            "completed": true
         },
         "auth-token-dummy": {
             "completed": true
