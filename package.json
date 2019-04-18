@@ -15,6 +15,7 @@
     "chalk": "*",
     "dotenv": "*",
     "graphql-request": "*",
+    "jsonwebtoken": "^8.5.1",
     "node-fetch": "*"
   },
   "devDependencies": {
@@ -37,6 +38,8 @@
     }
   },
   "lint-staged": {
-    "!(*.test).js": ["eslint"]
+    "!(*.test).js": [
+      "eslint"
+    ]
   }
 }
