@@ -26,7 +26,7 @@ describe('Mongo Queries', () => {
 
   afterAll(async () => {
     const client = await getDbClient();
-    client.close();
+    return client.close();
   });
 
   describe('Read', () => {

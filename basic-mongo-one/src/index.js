@@ -1,7 +1,10 @@
 /* Q1 (*)
   Return the number of movies in the "movies" collection without using array.length
 */
-export const getMoviesCount = async () => {};
+export const getMoviesCount = async (db) => {
+  const count = await db.collection('movies').find({}).count();
+  return count;
+};
 
 /* Q2 (*)
   Return the first movie with imdb rating = 9.2 and year = 1974.
@@ -85,3 +88,8 @@ export const addField = async () => {};
   Note: Do not use find() or findOne() to look for the current metacritic rating for "Gone Girl"
 */
 export const incrementalUpdate = async () => {};
+
+// async function test(){
+//   db = await getDb();
+//   getMoviesCount(db);
+// }
